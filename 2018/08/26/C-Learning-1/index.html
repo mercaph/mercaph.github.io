@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="C++小记" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    C++ Learning_1 |  MercaPH
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/dist/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="MercaPH" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-duotone-sea.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-C-Learning-1"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  C++ Learning_1
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      
+
+	<a href="/2018/08/26/C-Learning-1/" class="article-date">
+	  Published <time datetime="2018-08-26T12:22:41.000Z" itemprop="datePublished">2018-08-26</time>
+	</a>
+ 
+	<a href="/2018/08/26/C-Learning-1/" class="article-date">
+	  Updated <time datetime="2018-08-26T12:22:41.000Z" itemprop="dateUpdated">2018-08-26</time>
+	</a>
+
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/learning-notes/">learning notes</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">8.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">38 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>C++小记<br><a id="more"></a></p>
+<pre><code>&#x2F;*********************类的继承***********************&#x2F;
+代码的重用
+派生类可以访问基类中所有非私有成员
+不继承基类的构造函数，析构函数，拷贝构造函数
+基类的重载运算符
+基类的友元函数
+protected 类内和子类可访问
+
+&#x2F;&#x2F;继承类型：public private protected
+基类的私有成员不能直接被派生类访问
+多继承
+class Rectangle: public Shape,public PaintCost{&#x2F;&#x2F;公有继承
+
+}
+class Person{
+	public:
+		string m_strName;
+		int m_nAge;
+		bool m_bIsMale;
+
+```cpp
+	string GetName(){
+		return m_strName;
+	}
+	int GetAge(){
+		return m_nAge;
+	}
+	bool IsMale(){
+		return ...
+	}
+```
+}
+#ifndef TABTENN1_H_
+#define TABTENN1_H_
+#include &lt;string&gt;
+using std::string;
+class TableTennisPlayer{
+	...
+}
+class RatedPlayer : public TableTennisPlayer{
+	
+};
+#endif
+
+&#x2F;&#x2F;派生类和基类的关系
+基类指针和引用可以指向派生类对象
+可以将基类对象初始化为派生类对象：
+RatedPlayer olaf1(1840,&quot;&quot;);
+TableTennisPlayer olaf2(olaf1);&#x2F;&#x2F;调用隐式复制构造函数TableTennisPlayer(const TableTennisPlayer &amp;);
+
+TableTennisPlayer winner;
+winner = olaf1;&#x2F;&#x2F;调用隐式赋值函数：TableTennisPlayer &amp; operator = (const TableTennisPlayer &amp;)const;
+
+&#x2F;&#x2F;继承可以在基类上添加属性，但是不能够删除属性
+&#x2F;&#x2F;一个构造函数的代码
+RatedPlayer::RatedPlayer(unsigned int r,const string &amp; fn,const string &amp;ln,bool ht)
+:TableTennisPlayer(fn,ln,ht)&#x2F;&#x2F;初始化成员列表，调用了基类的构造函数&#x2F;&#x2F;参数从派生类构造函数传递给基类构造函数
+{&#x2F;&#x2F;
+	rating = r;
+}
+如果不调用基类的构造函数，程序将使用基类的默认构造函数
+&#x2F;&#x2F;派生类对象过期时，系统首先调用了派生类对象的构造函数，再调用基类的析构函数
+
+&#x2F;&#x2F;多态的公有继承同一个方法在派生类和基类的行为是不同的
+基类：
+class Base{
+	public:
+		virtual void ViewAcct()const;&#x2F;&#x2F;virtual
+}
+class BasePlus : public Base{
+	public:
+		virtual coid ViewAcct()const;
+}
+virtual关键词说明：&#x2F;&#x2F;在基类声明了虚方法后，派生类会自动生成虚方法
+如果方法通过引用和指针而不是对象调用的,没有加virtual关键字的的系统根据引用类型和指针类型
+来选择方法&#x2F;&#x2F;加了Virtual 关键字指向的对象的类型来选择方法
+Base dom();
+BasePlus dot(&quot;&quot;);
+Brass &amp; b1_ref = dom;
+Brass &amp; b2_ref = dot;引用类型是Brass ,引用的是BrassPlus对象
+b1_ref.ViewAcct();&#x2F;&#x2F;use Brass::ViewAcct();
+b2_ref.ViewAcct();&#x2F;&#x2F;use Brass::ViewAcct();&#x2F;&#x2F;use BrassPlus::ViewAcct()使用了Virtual
+为基类声明一个虚析构函数是惯例
+
+&#x2F;&#x2F;如果用一个数组保存Brass和BrassPlus的对象是无法做到的，
+&#x2F;&#x2F;但是可以创建指向Brass的指针数组，Brass指针可以指向BRassPlus对象，使用一个数组来表示多种类型的对象就是多态性
+Brass * p_clients[CLIENTS];
+
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&quot;brass.h&quot;
+const int CLIENTS = 4;
+int main(){
+	using std::cin;
+	using std::count;
+	using std::endl;
+
+	Brass * p_clients[CLIENTS];
+	std::string temp;
+	long tempnum;
+	double tempbal;
+	char kind;
+	
+	for (int i =0;i&lt;CLIENTS;i++){
+		cout &lt;&lt; &quot;enter client&#39;s name&quot;;
+		getline(cin,temp);
+		cin &gt;&gt; tempnum;
+		cin &gt;&gt; tempbal;
+		while(cin&gt;&gt;kind &amp;&amp; (kind !=&#39;1&#39;&amp;&amp; kind !=&#39;2&#39;))
+			cout &lt;&lt; &quot;enter either 1 or 2&quot;;
+		if(kind == &#39;1&#39;)
+			p_clients[i] = new Brass(temp,tempnum,tempbal);
+		else{
+			double tmax,trate;
+			cin &gt;&gt; tmax;
+			cint &gt;&gt; trate;
+			p_clients[i] = neew BrassPlus(temp,tempnum,tempbal,tmax,trate);
+		}
+		while(cin.get() != &#39;\n&#39;)
+			continue;
+	}
+	cout &lt;&lt; endl;
+	for (int i = 0;i&lt;CLIENTS;i++){
+		p_clients[i]-&gt;ViewAcct();
+		cout &lt;&lt; endl;
+	}
+	for (int i = 0;i&lt;CLENTS;i++){
+		delete p_clients[i];&#x2F;&#x2F;free memory
+	}
+}
+&#x2F;&#x2F;为何需要虚析构函数？
+如果析构函数不是虚的，则将调用对应指针类型的析构函数，这意味着只有brass的析构函数被调用，即使指针指向的是brassplus对象
+将调用相应对象类型的析构函数；
+
+&#x2F;&#x2F;静态联编和动态联编
+c++不允许一种类型的地址赋给另一种类型的指针
+不允许一种类型的引用指向另一种类型；
+但是基类的引用或指针可以指向派生类的对象
+Brass * pb = &amp;dilly;
+将派生类的引用或指针转换为基类的引用或指针被称为向上强制类型转换&#x2F;&#x2F;没有问题，包含关系
+将基类指针或引用转换为派生类的指针或引用为向下强制类型转换，如果不使用显示类型转换，是不被允许的
+隐式向上强制转换使基类指针或引用可以指向基类对象或派生类对象，因此需要动态联编，用virtual来实现
+
+BrassPlus ophelia;
+Brass * bp;
+bp = &amp;ophelia;
+bp-&gt;ViewAcct();&#x2F;&#x2F;没有调用虚方法就调用的使Brass的函数；
+&#x2F;&#x2F;为何不摒弃静态联编？
+静态联编的效率更高，如果派生类不重新定义基类的任何方法，就用静态联编，效率更高
+&#x2F;&#x2F;虚函数的实现原理：
+给每个对象添加一个隐藏成员，保存了一个指向函数地址的数组指针
+对于每个类，编译器都要创建一个虚函数地址表
+对于每个函数的调用，都要在表中查找地址
+
+Employee * pe = new Singer;
+delete pe;&#x2F;&#x2F;~Employee() or ~Singer();
+如果是静态联编则调用~Employee(),释放Singer对象中的Employee部分指向的内存，但不会释放新的类成员指向的内存
+如果是动态联编，会先用~Singer()释放Signer组件指向的内存，然后调用~Employee释放它的内存
+
+友元不能是虚函数，因为友元不是类成员，只有成员才能是虚函数
+
+public:
+	virtual void showperks(int a)const;&#x2F;&#x2F;base
+public:
+	virtual void showperks()const;&#x2F;&#x2F;重新定义不会生成两个函数的重载版本，而是隐藏所有的同名基类版本
+	返回类型协变：返回基类的引用变成返回派生类的引用或指针
+	如果积累的声明被重载，则应在派生类中重新定义所有的基类版本；
+
+&#x2F;&#x2F;访问控制protected
+对于派生类来说protected和公有成员相似
+对于外部世界，行为与私有成员相似
+
+&#x2F;*抽象基类*&#x2F;
+circle和ellipse有很多共同点
+可以从这两个类中抽象出共同的特性，将这些特性放在一个ABC中，然后从abc派生出circle和ellipse类
+
+c++通过纯虚函数提供未实现的函数
+public:
+	BaseEllipse(double x0 = 0,double y0 = 0) : x(x0),y(y0){};
+	virtual BaseEllipse(){};
+	virtual double Area() const = 0;&#x2F;&#x2F;纯虚函数，原型中=0的虚函数为纯虚函数
+	void Move(int nx,ny) = 0;&#x2F;&#x2F;基类成为抽象的
+	void BaseEllipse::Move(int nx,ny){x=nx;y=ny;}&#x2F;&#x2F;仍可以在实现文件中定义
+
+class Circle:public BaseEllipse{};&#x2F;&#x2F;具体类，可以用BaseEillpse的指针数组同时管理这两种对象
+
+&#x2F;&#x2F;actabc.h
+class AcctABC{
+
+}
+AcctBBC::AcctABC(const string &amp; s,long an,double bal){
+	fullName = s;
+	accaNum = an;
+}
+BrassPlus::BrassPlus(const string &amp; s,long an,double bal,double m1,double r):AcctABC(s,an,bal){
+	maxLoan = ml;
+	owesBank = 0.0;
+	rate = r;
+}
+void BrassPlus::ViewAcct()const{
+	Formatting f = SetFormat();
+
+	if (amt&lt;=bal)
+		AcctABC::Withdraw(amt);
+	else{
+		...
+	}
+}
+&#x2F;*继承和动态内存分配*&#x2F;
+
+
+
+&#x2F;******************类和动态内存分配***************************&#x2F;
+strngbad.h&#x2F;&#x2F;
+#include &lt;iostream&gt;
+#ifndef STRNGBAD_H_
+#define STRNGBAD_H_
+
+class StringBad{
+	private:
+		char * str;
+		int len;
+		static int num_strings;
+	public:
+		StringBad(const char*s);
+		StringBad();
+		~StringBad();
+
+		friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os,const StringBad &amp; st);
+};
+#endif
+
+
+#include&lt;cstring&gt;
+#include&quot;stringbad.h&quot;
+
+int StringBad (const char* s){
+	len = std::strlen(s);
+	str = new char[len + 1];
+	std::strcpy(str,s);
+	num_strings++;
+	cout &lt;&lt; num_strings &lt;&lt; &quot;: \&quot; &quot;&lt;&lt; str&lt;&lt; &quot;\&quot; default object created\n&quot;;
+}
+StringBad::StringBad(){
+	len = 4;
+	str = new char[4];
+	std::strcpy(str,&quot;C++&quot;);
+	num_strins++;
+	cout&lt;&lt; num_strings &lt;&lt; &quot;: \“ &quot;&lt;&lt; str&lt;&lt; &quot;\&quot; default object creat\n&quot;;
+}
+StringBad::~StringBad(){
+	--num_strings;
+	delete [] str;
+}
+
+&#x2F;&#x2F;int StringBad::num_strings = 0;&#x2F;&#x2F;不能在类声明中初始化静态成员变量，声明中描述了如何分配内存，但不分配内存
+point: 静态数据成员在类声明中声明，在类方法文件中初始化，使用作用域运算符来指出静态成员所属的类
+静态成员是const整数类型或emun枚举型，则可以在类声明中初始化
+
+
+&#x2F;&#x2F;复制构造函数
+StringBad ditto(motto);
+StringBad metoo = motto;
+StringBad also = StringBad(motto);
+StringBad * pSt = new StringBad(motto);
+显示复制构造函数
+复制构造函数应当复制副本，而不是引用另一个对象的字符串
+
+StringBad::StringBad(const StringBad &amp; st){
+	num_strings_++;
+	len = st.len;
+	str = new char[len+1];
+	std::strcpy(str,st.str);
+}
+
+StringBad metoo = knot;&#x2F;&#x2F;初始化用复制构造函数；
+编写赋值运算符:
+StringBad &amp; StringBad::operator=(const StringBad &amp; st){
+
+	if(this == &amp;st)
+		return st;
+	delete [] str;
+	len=st.len;
+	str= new char [ len+1];
+}
+
+&#x2F;&#x2F;静态类成员函数
+static int Howmany(){
+	
+}
+
+调用方法：
+int count = String::Howmany();&#x2F;&#x2F;静态函数不与特定的对象相关联，因此静态函数只能使用静态成员
+
+class String {
+
+}
+
+&#x2F;***************使用类*************&#x2F;
+比起按值传递对象，传递引用速度快，使用的内存少
+Time Time::Sum(const Time &amp; t) const{
+	Time sum;
+	return sum;
+}
+如果返回类型为Time&amp;,则为指向sum的引用，但是sum为局部对象，函数结束及删除，则指向一个不存在的对象
+返回类型为Time，意味着程序在删除sum之前构造它的拷贝，调用函数将得到他的拷贝
+
+&#x2F;*运算符重载*&#x2F;
+public:
+	Time operator+(const Time &amp; t)const;
+
+Time Time::operator+(const Time &amp; t)const{
+	Time sum;
+	sum.minutes = minutes + t.minutes;
+	return sum;
+}
+
+total = coding.operator+(fixing);
+total = coding + fixing;&#x2F;&#x2F;same
+
+main 函数中：
+int a , b , c;
+Time A,B,C;
+c=a+b;&#x2F;&#x2F;int addition
+C=A+B;&#x2F;&#x2F;addition as defined for Time objects
+
+&#x2F;*友元*&#x2F;
+另一种形式的访问权限；
+通过让函数成为类的友元，可以赋予该函数于类的成员函数相同的访问权限
+
+Time Time::operator*(double mult)const{
+	Time result;
+	long totalminutes = ...;
+}
+A = B * 2.75;&#x2F;&#x2F;左侧操作数是调用对象
+A = B.operator*(2.75);
+
+Time operator*(double m ,const Time &amp; t);&#x2F;&#x2F;非成员函数不可以直接访问类的私有数据
+说明：虽然在类声明中声明，但不是成员函数，不能使用成员运算符来调用
+不是成员函数但是和成员函数的访问权限相同，非成员函数不需要Time：：限定符
+Time operator*(double m,const Time &amp;t){
+}
+类的友元函数是非成员函数但是访问权限和成员函数相同
+类方法和友元只是表达类接口的两种不同机制
+
+&#x2F;&#x2F;重载&lt;&lt;运算符&#x2F;&#x2F;访问什么对象的私有成员才必须是该类的友元函数
+void operator&lt;&lt;(ostream &amp; os,const Time &amp; t)
+{
+	os &lt;&lt; t.hours&lt;&lt;&quot;hours&quot;&lt;&lt;t.minutes&lt;&lt;&quot;mintes&quot;;
+}
+cout &lt;&lt; trip;
+
+Time operator+(const Time &amp; t)const{
+
+}
+friend Time operator+(const Time &amp; t1,const Time &amp; t2);
+
+ostream &amp; operator&lt;&lt;(ostream &amp; os,const c_name &amp; obj){
+	os &lt;&lt;
+	return os;
+}
+&#x2F;*创建友元*&#x2F;
+第一步：在类声明中
+friend Time operator*(double m , const Time &amp;t);
+
+友元函数不在类的作用域内，所以要使用
+if(v.mode == vector::RECT&#x2F;&#x2F;不能使用RECT)
+
+Vector Vector::operator*(double n)const{
+	return Vector(n*x, n*y);
+}
+friend function&#x2F;&#x2F;
+Vector operator*(double n,const Vector &amp; a){
+	return a*n;
+}
+
+Vector Vector::operator-(const Vector &amp; b)const{
+	return Vector(x - b.x,y-b.y);
+}
+diff = v1 - v2;
+diff = v1.operator-(v2);
+
+重载已重载的运算符
+Vector Vector::operator-() const{
+	retutn Vector(-x,-y);
+}&#x2F;&#x2F;特征标不同，可以重载运算符
+
+using VECTOR::Vector;
+&#x2F;&#x2F;因为所有的Vector类方法的作用域为整个类，所以导入类名后，可以直接使用Vector的方法
+
+&#x2F;*类的自动转换和强制类型转换*&#x2F;
+数值类型转换可行：
+int side = 3.33;
+不自动转换不兼容类型：指针和整数时不同的类型
+int * p = 10;error
+此时用强制类型转换
+int * p = (int *)10;
+
+&#x2F;*类的强制类型转换*&#x2F;
+&#x2F;&#x2F;stonewt.h
+#ifndef STONEWT_H_
+#define STOMEWT_H_
+
+class Stonewt{
+	private:
+		enum{Lbs_per_stn = 14};&#x2F;&#x2F;static const int Lbs_pr_stn = 14
+		int stone;
+		double pds_left;
+		double pounds;
+	public:
+		Stonewt(double lbs);
+		Stonewt(int stn, double lbs);
+		Stonewt();
+		~Stonewt();
+		void show_lbs()const;
+		void show_stn()const;
+};
+#endif
+
+#include &lt;iostream&gt;
+using std::cout;
+#include&quot;stonewt.h&quot;
+
+Stonewt::Stonewt(double lbs)
+{
+	stone = int(lbs) &#x2F; Lbs_per_stn;
+	pds_left = int (lbs) % Lbs_per_stn + lbs - int(lbs);
+	pounds = lbs;
+}
+Stonewt::Stonewt(int stn ,double lbs){
+	stone = stn;
+	pds_left = lbs;
+}
+
+Stonewt(double lbs);&#x2F;&#x2F;将double类型转换为Stonewt类型
+Stonewt myCat;
+myCat = 19.36;&#x2F;&#x2F;correct;
+程序使用构造函数Stonewt(double)接受double参数19.36，转换为一个Stonewt对象，
+创建临时的Stonewt对象，并将19.6作为初始化的值，采用
+逐成员复制方式将该临时对象的内容复制到myCat中
+一个参数的构造函数才可以作为转换函数
+Stonewt(int a,double b);&#x2F;&#x2F;两个参数不可转
+Stonewt(int a ,double b  = 0);&#x2F;&#x2F;可以转，隐式转换
+
+显示转换：
+mCat = Stonewt(1);
+
+关闭自动转换的特性：加关键字explicit
+explicit Stonewt(double lbs);
+
+构造函数只能用于某种类型到某种类类型的转换，不可用于相反的转换
+要进行相反的转换必须使用C++运算符函数——转换函数
+double thinker = (double)wolfe;
+&#x2F;&#x2F;double thinker = double(wolfe);
+创建转换函数 operator typename();&#x2F;&#x2F;要转换为typeName的类型；
+&#x2F;&#x2F;point: 转换函数必须是类方法；不能指定返回类型；不能有参数
+public:
+	operator int()const;
+	operator double()const;
+...
+stonewt1.cpp:
+&#x2F;&#x2F;conversion functions
+Stonewt::operator int()const{
+	return int (pounds + 0.5);
+}
+Stonewt::operator double()const{
+	...
+}
+Stonewt poppins(9,2.8);
+double p_wt = poppins;&#x2F;&#x2F;隐式使用了转换为double类型的构造函数
+int(poppins);&#x2F;&#x2F;显示类型转换
+
+cout&lt;&lt;poppins;&#x2F;&#x2F;不可直接使用，存在二义性
+存在多个转换时，可以使用
+long gone = double(poppins);
+&#x2F;&#x2F;最好使用显示转换，避免隐式转换
+public:
+	explicit operator int() const;
+	explicit operator double()const;
+
+此时 int plb = poppins是错误的
+Stone Stonewt::operator+(const Stonewt &amp; st)const{
+	double pds = pounds + st.pounds;
+	Stonewt sum(pds);
+	return sum;
+}&#x2F;&#x2F;成员函数重载加法函数
+
+Stonewt operator+(const Stonewt &amp; st1,const Stonewt &amp; st2){
+	return sum;
+}&#x2F;&#x2F;友元函数重载加法函数
+
+total = penn + jdl;
+total = operator+(dkkd,djs);
+
+friend Stonewt operator+(double x , Stonewt &amp; s);
+total = pennyD + jennySt;&#x2F;&#x2F;double + Stonewt
+&#x2F;********对象和类*****************&#x2F;
+&#x2F;&#x2F;&#x2F;stock00.h
+#ifndef STOCK00_H_
+#define STOCK00_H_
+45&quot;sdfsf&quot;
+char a &#39;s&#39;
+#include &lt;string&gt;
+class Stock&#x2F;&#x2F;类名大写
+{
+	private:&#x2F;&#x2F;default可省略
+		std::string company;
+		long shares;
+		double a;
+		void set_lot(){&#x2F;&#x2F;内敛方法，可以inline限定符定义在类外
+			share = ...
+		}
+	public:&#x2F;&#x2F;公共接口
+
+};&#x2F;&#x2F;勿漏
+inline void Stock::set_lot(){
+
+}
+&#x2F;&#x2F;stock00.cpp
+定义成员函数时，需要作用于解析运算符（::）来标识函数所属的类
+类方法可以访问类的private组件
+
+#include &lt;iostream&gt;
+#include&quot;stock00.h&quot;
+void Stock::acquire(const std::string &amp; co,long n,double pr)
+{
+	company = co;
+	if...
+}
+void Stock::buy(long num,double price);
+
+void Stock::show(){
+	using std::cout;
+	using std::ios_base;
+	ios_base::fmtflags orig = cout.setf(ios_base::fixed,ios_base::floatfield);
+	std::streamsize prec = cout.precision(3);
+	...
+	cout.setf(orig,ios_base::floatfield);
+	cout.precision(prec);
+}
+&#x2F;********类的构造函数和析构函数*****************&#x2F;
+Stock gift;
+gitf.buy(...);&#x2F;&#x2F;不能直接访问数据成员，只能通过成员函数访问
+
+声明和定义构造函数
+Stock::Stock(const string &amp;co, long n,double pr)
+{
+	company = co;
+}&#x2F;&#x2F;private: string company_&#x2F;m_company
+
+Stock garment(&quot;ddd&quot;,d,5)&#x2F;&#x2F;隐式使用等同于
+Stock garment = Srock(...);
+
+Stock *pstock = new Stock(..);&#x2F;&#x2F;创建一个stock对象，初始化提供参数的值，并将该对象的地址
+								&#x2F;&#x2F;赋给pstock指针，可以用指针来管理对象
+
+没有定义构造函数时系统才会用默认构造函数
+有定义的构造函数时
+Stock ddd;&#x2F;&#x2F;错误，不能用默认的构造函数了
+可以通过函数重载来定义不同的构造函数
+Stock::Stock{
+	company = &quot;no name&quot;
+}
+
+构造函数创建对象后，程序跟踪对象直到过期，过期则自动调用析构函数，完成清理工作
+每个类只有一个析构函数
+Stock类的析构函数 ： ~Stock();&#x2F;&#x2F;没有参数
+Stock::~Stock(){
+	cout&lt;&lt;&quot;Bye&quot;&lt;&lt;endl;
+}&#x2F;&#x2F;通常不在代码中显示使用，对象的类型不同则析构函数调用的时机不同
+stock1 = Stock(..)&#x2F;&#x2F;构造函数不仅仅用来初始化，stock1已经存在，该语句通过构造
+					&#x2F;&#x2F;函数创造一个新的临时的变量，然后将内容复制给stock1，随后程序调用析构函数删除该临时对象
+
+列表初始化：
+Stock hot = {...};
+Stock hot{...};
+
+const Stock land = Stock(...);
+land.buy()&#x2F;&#x2F;错误，因为show的代码无法保证所调用的对象不被修改
+
+const 成员函数:
+void show()const;
+void Stock::show()const;&#x2F;&#x2F;保证函数不会修改调用对象
+只要类方法不修改调用对象，就将其声明为const
+
+
+&#x2F;**this指针**&#x2F;
+要使方法返回一个引用，该引用指向股票价值更高的对象
+const Stock &amp; topval(const Stock &amp;)const;
+括号中的const表明不会修改显示引用的对象，括号后的const表示不会修改被隐示访问的对象
+top = stock1.topval(stock2);&#x2F;&#x2F;显示访问stock2，隐示访问stock1
+
+const Stock &amp; Stock::topval(const Stock &amp;)const{
+	if(s.total &gt; total)
+		return s;
+	else
+		return *this;
+}
+&#x2F;&#x2F;this是对象的地址，*this为对象，返回类型为引用意味着返回的是对象本身而不是副本
+
+&#x2F;*对象数组*&#x2F;
+Stock mustuff[4];
+程序创建未被显示初始化的类对象时，总是调用默认的构造函数
+const int STKS = 4;
+Stock stock [STKS] = {
+	Stock(&quot;NanoSmart&quot;,1.5);
+	..
+	Stock(..);
+};
+
+类作用域意味着不能从外部直接访问类成员，
+Ik * pik = new Ik;
+类只描述了对象的形式，并没有创建对象，因此，在创建对象前是没有用于存储值的空间
+
+在类中定义常量的方式——关键字static
+class Bakery
+{
+	private:
+		static const int Months = 12;
+		doube costs[Months];
+};&#x2F;&#x2F;这创建一个Months的常量，不存储在对象中，只有一个Months常量被所有Bakery共享&#x2F;&#x2F;只能整型和枚举
+
+typedef unsigned long Item;
+Stack::Stack(){
+	top = 0;
+}
+
+bool Stack::isempty() const{
+	return top==0;
+}
+
+bool Stack::isfull() const{
+	return top == MAX;
+}
+&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+5种变量存储方式
+自动
+寄存器
+静态（无链接性）代码块中使用static，作用域代码块
+静态（外部链接性）不在任何函数内，作用域文件
+静态（内部链接性）不在任何函数内使用static
+静态变量的零初始化
+
+int x;&#x2F;&#x2F;zero-initialization
+链接性为外部的变量叫外部变量或全局变量
+多个文件中使用外部变量只需要在一个文件中定义声明,给变量分配存储空间：double up;
+引用声明不给变量分配存储空间，引用已有的变量：extern int blem;
+*程序越能避免对数据进行不必要的访问越能保持数据的完整性
+外部变量不可以在两个文件中都定义声明
+static int errors = 5&#x2F;&#x2F;static 指出标识符errors 的链接性为内部，可以在其他文件中再定义
+&#x2F;&#x2F;file2
+int errors &#x2F;&#x2F;correct
+
+&#x2F;*无链接性的局部变量*&#x2F;
+将static的限定符用于在代码块中定义的变量
+在代码块不活动时仍然存在
+程序在启动时只进行一次初始化，及再次调用函数时不会重新初始化
+
+&#x2F;*thread_local*&#x2F;
+存储说明符号之一，register、static、extern(引用声明)
+thread_local用于线程
+&#x2F;*cv-限定符*&#x2F;
+const
+volatile?
+
+
+mutable&#x2F;&#x2F;即使结构或类的变量为const，其某个成员也可以被修改
+struct  data{
+	char name[30];
+	mutable int accesses;
+}
+const全局变量的链接性是内部的
+const int fingers = 10;&#x2F;&#x2F;== static
+这意味着每个文件都有自己的一组常量，而非共享常量，所以可以多个文件声明
+
+若希望某个常量的链接性是外部的
+extern const int figers = 10;&#x2F;&#x2F;extern可以覆盖掉默认的内部链接性&#x2F;&#x2F;此时只有一个文件对它初始化
+
+&#x2F;*函数的链接性*&#x2F;
+通常函数的链接性是静态外部的，所有文件可用
+使用static则将链接性置为内部，一个文件中使用
+static int private(double &amp; x);
+??内联函数，非内联函数
+extern
+
+&#x2F;*动态分配内存*&#x2F;
+float *p_fees = new float [20];
+new 分配的80b内存保存在内存中，直到delete运算符将其释放
+分配内存并初始化
+int * po = new int (6)
+
+struct where {double x;double y;double z};
+where * there = new where{2.5,563.3,23.5};
+
+定位new运算符
+#include&lt;new&gt;
+double *pd2;
+char buffer[BUF];
+pd2 = new (buffer) double[N];
+delete [] pd2;&#x2F;&#x2F;incorrect
+
+声明区域&#x2F;&#x2F;文件或代码块
+潜在作用域&#x2F;&#x2F;声明点开始到声明区域结尾
+
+&#x2F;*关键字namespace*&#x2F;
+namespace Jack{
+	double pail;
+	void fetch();  &#x2F;&#x2F;fuction prototype
+	int pal;		&#x2F;&#x2F;variable declaration
+	struct Well{};	&#x2F;&#x2F;structure declaration
+}
+名称空间可以是全局的，但不能位于代码块中，链接性为外部，除非它引用常量
+任何名称空间中的名称都不会和其他名称空间发生冲突
+可以不断添加
+namespace Jack{
+	int j;
+}
+访问方法：
+Jack::pail = 12.36;
+
+局部变量覆盖同名的全局变量
+using Jill::fetch;
+cin &gt;&gt; fetch;
+cout &lt;&lt; fetch;
+
+jack::pal = 3;
+Jill::pal = 3;&#x2F;&#x2F;不同的标识符，表示不同的内存单元
+
+using 编译命令和using 声明
+局部作用
+using namespace Jill;
+Hill Thrill;&#x2F;&#x2F;Jill::Hill Thrill;
+
+std::cin &gt;&gt; a;
+std::cout &lt;&lt; b;
+
+or
+
+using std::cin;
+using std::cout;
+cin &gt;&gt;
+cout&lt;&lt;
+
+名称空间可以嵌套
+namespace a{
+	namespace B{
+
+	}
+}
+a::B::...
+
+&#x2F;&#x2F;未命名的名称空间
+namespace {
+	..
+}&#x2F;&#x2F;潜在作用域为从声明点到结尾
+
+
+&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+cin.eof();&#x2F;&#x2F;true , false;
+
+typedef typename aliasName;
+double prices = {...};
+for (double x : prices)
+	body
+
+
+关系运算符
+x+3 &lt; y-2;
+关系运算符的优先级比算术运算符低
+
+前缀运算符从右到左的结合规则
+*++pt;&#x2F;&#x2F;*（++pt）
+++*pt&#x2F;&#x2F;== ++(*pt)
+
+逗号&#x2F;&#x2F;优先级最低
+cata = 17,240;&#x2F;&#x2F;17
+cata = (17,240)&#x2F;&#x2F;240
+(cata = 17),240&#x2F;&#x2F;17
+&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+vector&#x2F;&#x2F;动态数组
+#include&lt;vector&gt;&#x2F;&#x2F;使用vector必须使用的头文件
+vector&lt;int&gt; vi;
+int n;
+cin &gt;&gt; n;
+vector&lt;double&gt; vd(n);
+
+vector&lt;typename&gt; vt(n_elem);&#x2F;&#x2F;vt是一个vector对象，可存储n_elem个类型为typename的元素
+n_elem可以是整型变量或常量
+
+
+array
+#include &lt;array&gt;
+array对象长度固定，用栈（静态内存分配）
+array&lt;typename,n_elem&gt;arr;创建一个名为arr的array对象，包含n_elem个类型为typename 的元素
+n_elem不能是变量
+访问：和数组一样
+扩展：a2[-2] = 0.4&#x2F;&#x2F;*(a2-2) = 0.4
+a2.at(1) = 12.36&#x2F;&#x2F;a2[1] = 12.56;
+
+&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+struct ind{
+	int year;
+
+};
+ind s1,s2,s3;
+s1.year = 23;;
+ind * wp = &amp;s1;
+wp -&gt; year = 1999;
+ind triio[3];
+(triio+1) -&gt; year = 1235;
+
+创建指针数组
+const ind * arp[3] = {&amp;s1,&amp;s2,&amp;s3};
+arp[1] -&gt; year
+
+&#x2F;&#x2F;&#x2F;********************************指针和自由存储空间**********************************&#x2F;
+&#x2F;&#x2F;
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+int main()
+{
+
+	&#x2F;&#x2F;使用常规变量时，值是指定的量，地址为派生量
+	&#x2F;&#x2F;存储数据时，地址为指定的量，值为派生量
+	
+	using namespace std;
+	int a = 0;
+	int updates = 6;
+	int * p_updates;
+	p_updates = &amp;updates;
+	int * u_art = &amp;a;&#x2F;&#x2F;指针初始化&#x2F;&#x2F;&#x2F;分配了储存地址的内存，但不会分配用来存储指针所指向数据的内存
+	
+	int* p1,p2;&#x2F;&#x2F;&#x2F;p1为指针，p2为int变量
+	&#x2F;&#x2F;&#x2F;p_updates的类型是指向int的指针
+	&#x2F;&#x2F;&#x2F;在对指针进行解引用*时，必须将指针初始化为一个确定的、适当的地址
+	int* pt;
+	pt = (int*)0xB8000000;&#x2F;&#x2F;&#x2F;pt = 0xB8000000不匹配，需要强制类型转换(int*)
+	
+	&#x2F;&#x2F;&#x2F;使用new来动态分配内存
+	int* pj = new int;	
+	typename * pointer_name = new typeName;
+						&#x2F;*new int 告诉程序需要适合存储int的内存，
+						new根据类型来确定需要多少字节的内存，
+						找到这样的内存空间并返回其地址给pj*&#x2F;
+	
+	delete pj;&#x2F;&#x2F;不要释放已经释放的内存块
+	
+	int nights = 1205;
+	int *pg = new int;
+	*pg = nights;
+	cout &lt;&lt; &quot;nights value = &quot; &lt;&lt; nights &lt;&lt; endl;
+	
+	delete pg;&#x2F;&#x2F;&#x2F;delete用来释放new分配的内存
+	
+	&#x2F;&#x2F;&#x2F;使用new创建动态数组
+	int * psome = new int [10];&#x2F;&#x2F;get a block of 10 ints
+								&#x2F;&#x2F;第一个元素的地址被赋给psome指针
+	delete [] psome;&#x2F;&#x2F;释放new创建的数组&#x2F;&#x2F;括号表示释放的是整个数组而不仅仅是指针指向的元素
+	typename * pointer_name = new typename[num];
+	double * p3 = new double[3];
+	p3[0] = 0.67;
+	p3[1] = 0.58;
+	delete [] p3;
+	&#x2F;&#x2F;p3 + 1 ==&gt; 指向的是p3[1]的地址
+	&#x2F;&#x2F;指针变量+1后，其值等于它所指向类型的字节数
+	double *pw = new double[6];
+	&#x2F;&#x2F;pw比pw+1小8
+	&#x2F;&#x2F;可以修改指针的值 pw = pw + 1&#x2F;&#x2F;但是数组名是常量
+	
+	double wages[3] = {3.5,65.5,89.56};
+	sizeof(wages)&#x2F;&#x2F;==&gt; 24
+	double * pw = wages;
+	sizeof(pw);&#x2F;&#x2F;==&gt; 4
+	
+	short tell[10];
+	&#x2F;&#x2F;tell 和 &amp;tell 的值相同
+	&#x2F;&#x2F;tell（第一个元素的地址） 和 &amp;tell[0]相同，是一个2Bytes内存块的地址
+	&#x2F;&#x2F;&amp;tell指的是整个array的地址，是一个20Bytes内存块的地址
+	&#x2F;&#x2F;tell + 1 ;地址值+2
+	&#x2F;&#x2F;&amp;tell + 1 ;地址值+20
+	&#x2F;&#x2F;tell是一个short指针（*short）&#x2F;&#x2F;&amp;tell 是short数组的指针（short(*)[20]）
+	short (*pas) [20] = &amp;tell;
+	&#x2F;&#x2F;pas先与[20]结合，导致pas是一个short指针数组，包含20个元素；*pas与tell等价
+	
+	动态lianbian
+	int size;
+	cin &gt;&gt; size;
+	int * pz = new int [size];
+	delete [] pz;
+	
+	const char * bird = &quot;will&quot;;&#x2F;&#x2F;&quot;will&quot;表示字符串的地址&#x2F;&#x2F;const用bird访问字符串但不可修改
+	
+	&#x2F;&#x2F;new 创造动态结构
+	inflatable * ps = new inflatable;&#x2F;&#x2F;足以存储inflatable结构的一块内存地址赋给ps
+	
+	struct things
+	{
+		int good;
+		int bad;
+	};
+	things grubnose = {3,45};
+	things * pt = &amp;grubnose;
+	grubnose.good == pt-&gt;good&#x2F;&#x2F;-&gt;运算符用于指针
+	
+	&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+	自动存储
+	自动变量是局部变量，作用域为包含它的代码块
+	静态存储
+	static double d = 53.65；
+	存在于程序的整个生命周期
+	动态存储
+	new delete 管理一个内存池堆，数据的生命不受程序和函数的限制，
+
+
+	cin.get();
+	return 0;
+}
+
+&#x2F;********************************枚举enum***********************************&#x2F;
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+int main()
+{
+	&#x2F;&#x2F;&#x2F;创建符号常量代替const
+	enum spectrum {red,orange,yellow,green};&#x2F;&#x2F;&#x2F;red...为符号常量，它们对应的整数值0~7，这些常量称为
+	spectrum band;
+	band = orange;&#x2F;&#x2F;&#x2F;只有4个可能的值,band=5622错误把非enum值赋给enum变量视为错误
+	&#x2F;&#x2F;&#x2F;枚举量是整型，可提升至int类型，反之不行eg. band=3错误
+	int rd;
+	rd = band + 4;&#x2F;&#x2F;correct
+	&#x2F;&#x2F;&#x2F;band = red + orange;&#x2F;&#x2F;&#x2F;错误,red+orange计算时强制类型转化为int,int不可赋值给band
+	band = spectrum(3);&#x2F;&#x2F;typecast 3 to type spectrum
+
+	enum bits{one = 1,two = 2,four=4,eight,nig=2};&#x2F;&#x2F;&#x2F;eight = 5,默认大1&#x2F;&#x2F;可以有多个值相同的变量
+	cin.get();
+	return 0;
+}
+&#x2F;********************************共用体union***********************************&#x2F;
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+int main()
+{
+	union one4all
+	{
+		int int_val;
+		long long_val;
+		double double_val;
+	};
+	one4all pa;
+	pa.double_val = 2.36;&#x2F;&#x2F;&#x2F;store a double
+	pa.long_val= 12352;&#x2F;&#x2F;&#x2F;store a long, double is lost
+
+	struct widget 
+	{
+		char brand[20];
+		int type;
+		union id
+		{
+			long id_num;
+			char id_char[20];
+		}id_val;
+	};
+	widget price;
+	if (price.type == 1)
+		cin &gt;&gt; price.id_val.id_num;
+	else 
+		cin &gt;&gt; price.id_val.id_char;
+	
+	&#x2F;&#x2F;&#x2F;匿名共用体
+	struct widget 
+	{
+		char brand[20];
+		int type;
+		union &#x2F;&#x2F;没有名称，其成员位于相同地址处的变量，每次只有一个成员是当前成员
+		{
+			long id_num;
+			char id_char[20];&#x2F;&#x2F;此时id_num和id_char被视为price的两个成员
+		};
+	};
+	
+	cin.get();
+	return 0;
+}
+&#x2F;&#x2F;&#x2F;********************************结构体***********************************&#x2F;
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+struct inflatable &#x2F;&#x2F;&#x2F;外部声明可以被后面任何函数调用
+	{
+		char name[20];
+		float volume;
+		double price;
+	};&#x2F;&#x2F;勿漏分号,结束结构声明
+int main()
+{
+	using namespace std;
+	&#x2F;&#x2F;&#x2F;结构
+	struct inflatable &#x2F;&#x2F;&#x2F;局部声明只能用在一个函数中
+	{
+		char name[20];
+		float volume;
+		double price;
+	};&#x2F;&#x2F;勿漏分号,结束结构声明
+	inflatable hat;
+	inflatable woopie;
+	inflatable mainframe;
+
+	inflatable guest = 
+	{
+		&quot;Glorious Gloria&quot;,
+		1.85,
+		26.35
+	};&#x2F;&#x2F;&#x2F;guest is a structure of type inflatable
+	inflatable pal =
+	{
+		&quot;Ajir&quot;,
+		2.36,&#x2F;&#x2F;&#x2F;逗号隔开
+		2.685
+	};
+	
+	&#x2F;&#x2F;&#x2F;inflatable duck {&quot;dsf&quot;,2.365,56.0};(=)可以被省略
+	
+	inflatable mayor={};&#x2F;&#x2F;&#x2F;各个成员每个字节都被初始化为零
+	
+	cout &lt;&lt; &quot;Expand your guest list with&quot; &lt;&lt; guest.name;
+	cout &lt;&lt; &quot;and&quot; &lt;&lt; pal.name &lt;&lt; &quot;!&quot; &lt;&lt; endl;
+	
+	inflatable choice;
+	choice = pal;&#x2F;&#x2F;&#x2F;成员赋值有效
+	struct perks 
+	{
+		int key;
+		char car[12];
+	}mr_simth,ms_jones;&#x2F;&#x2F;&#x2F;同时完成定义结构和创建结构变量
+	
+	struct 
+	{
+		int x;
+		int y;
+	}position;&#x2F;&#x2F;&#x2F;省略结构名称，同时定义一种结构类型和其变量
+	
+	&#x2F;&#x2F;结构数组
+	inflatable gifts[20];&#x2F;&#x2F;&#x2F;array of 100 inflatable structures
+	&#x2F;&#x2F;&#x2F;gifts是一个inflatable数组,每个元素都是inflatable 对象
+	cin &gt;&gt; gifts[0].price;
+	cout &lt;&lt; gifts[99].price &lt;&lt; endl;
+	
+	inflatable gue[2] = &#x2F;&#x2F;initializing an array of structs
+	{
+		{&quot;dsf&quot;,1.32,25.325},&#x2F;&#x2F;first structure in array
+		{&quot;sdf&quot;,5.23,2.69}&#x2F;&#x2F;second structure in array
+	};
+	&#x2F;&#x2F;结构中的位字段
+	struct tor
+	{
+		unsigned int sn : 4;&#x2F;&#x2F;&#x2F;4bit for sn value
+		unsigned int : 4;&#x2F;&#x2F;&#x2F;
+		bool goodIn : 1;&#x2F;&#x2F;&#x2F;valid input 1 bit
+	};
+	cin.get();
+	return 0;
+}
+&#x2F;&#x2F;&#x2F;**********************************string********************************&#x2F;
+
+	string str;
+	const int Aside = 20;
+	char char1[Aside];
+	
+	cout &lt;&lt; strlen(char1)&lt;&lt;endl&lt;&lt;str.size()&lt;&lt;endl;
+	cin.getline(char1,20);
+	cout &lt;&lt; &quot;you enter the&quot;&lt;&lt;char1&lt;&lt;endl;
+	getline(cin,str);
+	&#x2F;&#x2F;&#x2F;打印)&quot;
+	&#x2F;&#x2F;cout &lt;&lt; R&quot;+* (&quot;(Who wouldn&#39;t?)&quot;,shewhispered.)+*&quot; &lt;&lt; endl;
+	
+	char ch = &#39;A&#39;;
+	int i = ch;
+	cout.put(ch);
+	cout&lt;&lt; ch&lt;&lt;i&lt;&lt;&quot;  some thing&quot;&lt;&lt; endl;
+	
+	enum color{
+		read,green=5,blue
+	}c;
+	
+	cin.get();
+
+&#x2F;&#x2F;refister存储类，只用于需要快速访问的变量
+&#x2F;&#x2F;static存储类，表示编译器在程序的生命周期内保持局部变量的存在，不会离开作用域就销毁和创建
+&#x2F;&#x2F;extern存储类，提供一个全局变量的引用，全局变量对所有程序文件是可见的，在其他文件中使用extern来得到已定义的变量或函数的引用
+&#x2F;&#x2F;&#x2F;**mutable存储类，允许对象的成员代替常量？？？
+&#x2F;&#x2F;字符串#include&lt;string&gt;
+&#x2F;&#x2F;cin.getline(charr,20);grtline(cin,str);
+&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+命名空间
+Piscine【版本名】::wanda;
+Microflop::wanda();
+using namespace std;
+
+赋值从右向左
+
+int chest = 42;
+int waist = 0x42;
+int inseam = 042;
+
+默认情况下，cout显示的是十进制
+	cout &lt;&lt; chest&lt;&lt; waist &lt;&lt;inseam;
+	cout&lt;&lt;hex;修改cout显示整数的方式
+	cout&lt;&lt;oct;
+	cout&lt;&lt;chest
+	cin &gt;&gt; ch;
+
+	cout&lt;&lt; &#39;$&#39;;&#x2F;&#x2F;&#39;$&#39;的ASCII码
+	cout.put(&#39;$&#39;);&#x2F;&#x2F;打印字符&#39;$&#39;
+	做为常规字符
+	
+	1.0e6
+	strlen(name1) strlen只可计算可见字符
+	sizeof() 计算数组大小
+	cin.getline(name,20);每次读取一行，换行符来确定行尾，不保存换行符,储存字符串时用空字符来替换换行符
+	cin.get(name,ArSize)
+	cin.get(name2,arAsize)&#x2F;&#x2F;上一个输入队列里的换行符被读取
+	
+	cin.get(name,ArSize)
+	cin.get();
+	cin.get(name2,AeSize)
+	or
+	cin.get(name,ArSize).get()
+
+
+	String str;
+	getline(cin,str)
+	
+	R&quot;+*()+*&quot; -&gt; &quot;(Who woulen&#39;t it)&quot;
+	&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;
+
+cin是C++的标准输入流，其本身是一个对象，并不存在返回值的概念。
+不过经常会有类似于
+while(cin&gt;&gt;a)
+的调用，这里并不是cin的返回值，而是&gt;&gt;操作重载函数
+istream&amp; operator&gt;&gt;(istream&amp;, T &amp;);的返回值，其中第二个参数由cin&gt;&gt;后续参数类型决定。
+其返回值类型为istream&amp;类型，大多数情况下其返回值为cin本身（非0值），只有当遇到EOF输入时，返回值为0。
+输入EOF的方法，windows下输入ctrl+z, Linux下输入ctrl+d。
+于是，当输入所有数据后，通过输入EOF的方法，可以退出while(cin&gt;&gt;a)这样的循环。</code></pre> 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        share
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2018/08/26/C-Learning-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/program/">program</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2018/08/26/GitBush常用指令/" class="article-nav-link">
+        <strong class="article-nav-caption">prev</strong>
+        <div class="article-nav-title">
+          
+            GitBush常用指令
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2018/08/26/Hexo常用指令/" class="article-nav-link">
+        <strong class="article-nav-caption">next</strong>
+        <div class="article-nav-title">Hexo常用指令</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "RtpkUwFtXvmt82QeX80OhMh8-gzGzoHsz",
+    app_key: "4ibEQkn78BGa03zP9zX7K50s",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2018-2020
+        <i class="ri-heart-fill heart_icon"></i> Quincy
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1279380206&amp;web_id=1279380206'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="MercaPH"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我吃串串呗~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<!-- Tocbot -->
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+<script src="/dist/main.js"></script>
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+<link rel="stylesheet" href="/css/clipboard.css">
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+<script src="/js/dz.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>

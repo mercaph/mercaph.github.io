@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="MercaPH" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Latex Note |  MercaPH
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/dist/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="MercaPH" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-duotone-sea.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Latex-note"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Latex Note
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      
+
+	<a href="/2020/03/17/Latex-note/" class="article-date">
+	  Published <time datetime="2020-03-17T19:46:31.000Z" itemprop="datePublished">2020-03-17</time>
+	</a>
+ 
+	<a href="/2020/03/17/Latex-note/" class="article-date">
+	  Updated <time datetime="2020-03-17T19:46:31.000Z" itemprop="dateUpdated">2020-03-17</time>
+	</a>
+
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/learning-notes/">learning notes</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">11 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>latex note while learning.<br><a id="more"></a></p>
+<h1 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%ctexbook,ctexreport,book,report,letter</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+
+
+<span class="token function selector">\title</span><span class="token punctuation">{</span>My First Document<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%title{\heiti 杂谈}%字体调整</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+    <span class="token function selector">\maketitle</span><span class="token comment" spellcheck="true">%输出整个标题</span>
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%字体有5种属性，粗细，宽度，斜体，伪斜体</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>tlmgr update –all//更新<br>tex -v<br><a href="https://www.jianshu.com/p/538856b3e5c0" target="_blank" rel="noopener">https://www.jianshu.com/p/538856b3e5c0</a><br>为保证中文可以正常使用：utf-8<br>\usepackage{ctex}%中文<br>$f(x)$<br>$$fo$$</p>
+<h2 id="说明文档"><a href="#说明文档" class="headerlink" title="说明文档"></a>说明文档</h2><p>texdoc ctex<br>texdoc lshort-zh<br>texdoc graphicx<br>texdoc booktab longtab tabu<br>shift+crtl+点击pdf即可反向查找，如图代码被白框包围。<br><a href="https://zhuanlan.zhihu.com/p/106167792" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/106167792</a></p>
+<p><code>\\换行</code><br><code>\par产生新的段落</code></p>
+<p>1）注释：组合键“Ctrl+K+C”；//Key关键，Comments注释<br>2）取消注释：组合键“Ctrl+K+U”。 //Uncomment取消注释<br>适当插入空行使源代码清晰</p>
+<h1 id="字体字号"><a href="#字体字号" class="headerlink" title="字体字号"></a>字体字号</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+
+
+<span class="token function selector">\title</span><span class="token punctuation">{</span>My First Document<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%title{\heiti 杂谈}%字体调整</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+    <span class="token function selector">\maketitle</span><span class="token comment" spellcheck="true">%输出整个标题</span>
+
+    <span class="token comment" spellcheck="true">%字体族设置（罗马字体，无衬线字体，打字机字体）</span>
+    <span class="token comment" spellcheck="true">%字体命令textrm</span>
+    <span class="token function selector">\textrm</span><span class="token punctuation">{</span>Roman Family<span class="token punctuation">}</span> <span class="token function selector">\textsf</span><span class="token punctuation">{</span>Sans Serif Family<span class="token punctuation">}</span> <span class="token function selector">\texttt</span><span class="token punctuation">{</span>Typewriter Family<span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%字体声明rmfamily括号为作用域,声明范围</span>
+    <span class="token punctuation">{</span><span class="token function selector">\rmfamily</span> Roman Family<span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token function selector">\sffamily</span> Sans Serif Family<span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token function selector">\ttfamily</span> Typewriter Family<span class="token punctuation">}</span>
+
+    <span class="token function selector">\sffamily</span> who you are? you find self on everyone around take you as thte same others!
+    are you wiser than others? definitely no.
+
+    <span class="token comment" spellcheck="true">%字体系列设置（粗细宽度）</span>
+    <span class="token function selector">\textmd</span><span class="token punctuation">{</span>Medium Series<span class="token punctuation">}</span> 
+    <span class="token function selector">\textbf</span><span class="token punctuation">{</span>Boldface Series<span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token function selector">\mdseries</span> Medium Series<span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token function selector">\bfseries</span> Boldface Series<span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%字体形状（直立、斜体、伪斜体、小型大写）</span>
+    <span class="token function selector">\textup</span><span class="token punctuation">{</span>Upright Shape<span class="token punctuation">}</span>
+    <span class="token function selector">\textit</span><span class="token punctuation">{</span>Italic Shape<span class="token punctuation">}</span>
+    <span class="token function selector">\textsl</span><span class="token punctuation">{</span>Slanted Shape<span class="token punctuation">}</span>
+    <span class="token function selector">\textsc</span><span class="token punctuation">{</span>small caps shape<span class="token punctuation">}</span>
+
+    <span class="token punctuation">{</span><span class="token function selector">\upshape</span> Upright Shape<span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token function selector">\itshape</span> Italic Shape<span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token function selector">\slshape</span> Slanted shape<span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token function selector">\scshape</span> Small Caps Shape<span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%中文字体 point:使用ctex的包</span>
+    <span class="token punctuation">{</span><span class="token function selector">\songti</span> 宋体<span class="token punctuation">}</span> <span class="token function selector">\quad</span>
+    <span class="token punctuation">{</span><span class="token function selector">\heiti</span> 黑体<span class="token punctuation">}</span> <span class="token function selector">\quad</span>
+    <span class="token punctuation">{</span><span class="token function selector">\fangsong</span> 仿宋<span class="token punctuation">}</span> <span class="token function selector">\quad</span>
+    <span class="token punctuation">{</span><span class="token function selector">\kaishu</span> 楷书<span class="token punctuation">}</span> <span class="token function selector">\quad</span>
+
+    中文字体的<span class="token function selector">\textbf</span><span class="token punctuation">{</span>粗体<span class="token punctuation">}</span>与 <span class="token function selector">\textit</span><span class="token punctuation">{</span>斜体<span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%字体大小设置</span>
+    <span class="token punctuation">{</span><span class="token function selector">\tiny</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\scriptsize</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\footnotesize</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\small</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\normalsize</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\large</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\LARGE</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\huge</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+    <span class="token punctuation">{</span><span class="token function selector">\Huge</span> Hello<span class="token punctuation">}</span><span class="token function selector">\\</span>
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%字体有5种属性，粗细，宽度，斜体，伪斜体</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="文档基本格式"><a href="#文档基本格式" class="headerlink" title="文档基本格式"></a>文档基本格式</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexbook</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+
+<span class="token function selector">\title</span><span class="token punctuation">{</span>My First Document<span class="token punctuation">}</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%===设置标题格式=====</span>
+<span class="token comment" spellcheck="true">% \ctexset{</span>
+<span class="token comment" spellcheck="true">%     section = {</span>
+<span class="token comment" spellcheck="true">%         format+ = \zihao{-4} \heiti \raggedright,</span>
+<span class="token comment" spellcheck="true">%         number = \chinese{section},</span>
+<span class="token comment" spellcheck="true">%         beforesikp = 1.0ex plus 0.2ex minus2ex,</span>
+<span class="token comment" spellcheck="true">%         afterskip =</span>
+<span class="token comment" spellcheck="true">%     }</span>
+<span class="token comment" spellcheck="true">% }</span>
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+    <span class="token function selector">\tableofcontents</span>
+
+    <span class="token function selector">\chapter</span><span class="token punctuation">{</span><span class="token headline class-name">绪论</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">引言</span><span class="token punctuation">}</span>
+    latex中文教程-15集从入门到精通包含各种latex操作
+    科技野生技术协会
+    2017-11-04 <span class="token function selector">\par</span> 12:30:57
+    23.2万播放 · 
+    2870弹幕
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">实验方法</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">实验结果</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">数据</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">图表</span><span class="token punctuation">}</span>
+            <span class="token function selector">\subsubsection</span><span class="token punctuation">{</span><span class="token headline class-name">实验条件</span><span class="token punctuation">}</span>
+            <span class="token function selector">\subsubsection</span><span class="token punctuation">{</span><span class="token headline class-name">实验过程</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">结果分析</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">结论</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">致谢</span><span class="token punctuation">}</span>
+    <span class="token function selector">\chapter</span><span class="token punctuation">{</span><span class="token headline class-name">实验结果分析</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">结论</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">致谢</span><span class="token punctuation">}</span>
+
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">空白符号</span><span class="token punctuation">}</span>
+    空行分段，多个空行等同于一个<span class="token function selector">\par</span>
+    自动缩进，绝对不能使用空格代替
+    英文中空格处理为一个空格，中文中空格被忽略
+    汉字与其他字符的间距自动由xelatex处理
+    禁止使用中文全角空格
+
+    1em(当前字体中M的宽度)<span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\quad</span> b <span class="token function selector">\par</span>
+    2em(当前字体中2M的宽度) <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\qquad</span> b <span class="token function selector">\par</span>
+    1/6em(当前字体中M的宽度) <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\,</span>b a<span class="token function selector">\thinspace</span> b <span class="token function selector">\par</span>
+    空格(当前字体中M的宽度) <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\ </span>b  <span class="token function selector">\par</span>
+    硬空格(当前字体中M的宽度) <span class="token function selector">\par</span>
+    eg. a~b  <span class="token function selector">\par</span>
+    1pc(=12pt=4.218mm) <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\kern</span> 1pc b <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\kern</span> -1em b <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\kern</span> 1em b <span class="token function selector">\par</span>
+    eg. a<span class="token function selector">\hspace</span><span class="token punctuation">{</span>35pt<span class="token punctuation">}</span>b <span class="token function selector">\par</span>
+    占位宽度<span class="token function selector">\par</span>
+    a<span class="token function selector">\hphantom</span><span class="token punctuation">{</span>xyz<span class="token punctuation">}</span>b<span class="token function selector">\par</span>
+    弹性长度<span class="token function selector">\par</span>
+    a<span class="token function selector">\hfill</span> b<span class="token function selector">\par</span>
+
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">\LaTeX 控制符</span><span class="token punctuation">}</span>
+    <span class="token function selector">\#</span> <span class="token function selector">\$</span> \<span class="token comment" spellcheck="true">% \{\} \~{} \_{} \^{} \textbackslash</span>
+    <span class="token function selector">\&amp;</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">排版符号</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">%\S  \P \dag \daag \copyright \pounds</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">Tex 标志符号</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">%\Tex{} \LaTeX{}</span>
+
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">引号</span><span class="token punctuation">}</span>
+    `'  ``'' <span class="token function selector">\par</span>
+    ``数字1键左边的引号''
+
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">连字符</span><span class="token punctuation">}</span>
+    - -- ---
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">非英文字符</span><span class="token punctuation">}</span>
+    <span class="token function selector">\oe</span> <span class="token function selector">\OE</span> <span class="token function selector">\ae</span> <span class="token function selector">\aa</span> <span class="token function selector">\o</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">重合符号</span><span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Latex中的插图"><a href="#Latex中的插图" class="headerlink" title="Latex中的插图"></a>Latex中的插图</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%语法 \includegraphics{}</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">ctexbook</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">graphicx</span><span class="token punctuation">}</span>
+<span class="token function selector">\graphicspath</span><span class="token punctuation">{</span><span class="token punctuation">{</span>figures/<span class="token punctuation">}</span>,<span class="token punctuation">{</span>pics/<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%图像在当前图像的figures目录</span>
+<span class="token function selector">\title</span><span class="token punctuation">{</span>Latex中的插图<span class="token punctuation">}</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+    <span class="token function selector">\LaTeX</span><span class="token punctuation">{</span><span class="token punctuation">}</span>中的插图
+
+    <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>scale=0.3<span class="token punctuation">]</span><span class="token punctuation">{</span>VSquick.jpg<span class="token punctuation">}</span>
+
+    <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>height=2cm<span class="token punctuation">]</span><span class="token punctuation">{</span>VSquick.jpg<span class="token punctuation">}</span>
+
+    <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=2cm<span class="token punctuation">]</span><span class="token punctuation">{</span>VSquick.jpg<span class="token punctuation">}</span>
+
+    <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=0.2<span class="token function selector">\textwidth</span><span class="token punctuation">]</span><span class="token punctuation">{</span>VSquick.jpg<span class="token punctuation">}</span>
+
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="表格浮动体"><a href="#表格浮动体" class="headerlink" title="表格浮动体"></a>表格浮动体</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%语法 \includegraphics{}</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">ctexbook</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">graphicx</span><span class="token punctuation">}</span>
+<span class="token function selector">\graphicspath</span><span class="token punctuation">{</span><span class="token punctuation">{</span>figures/<span class="token punctuation">}</span>,<span class="token punctuation">{</span>pics/<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%图像在当前图像的figures目录</span>
+<span class="token function selector">\title</span><span class="token punctuation">{</span>Latex中的插图<span class="token punctuation">}</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+    快捷键见图<span class="token function selector">\ref</span><span class="token punctuation">{</span><span class="token keyword">fig-lion</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%交叉引用</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
+        <span class="token function selector">\centering</span>
+            <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=2cm<span class="token punctuation">]</span><span class="token punctuation">{</span>figures/VSquick.jpg<span class="token punctuation">}</span>
+            <span class="token function selector">\caption</span><span class="token punctuation">{</span><span class="token function selector">\LaTeX</span> 系统<span class="token punctuation">}</span><span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">fig-lion</span><span class="token punctuation">}</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
+
+    在<span class="token function selector">\LaTeX</span><span class="token punctuation">{</span><span class="token punctuation">}</span>中的表格,可以由下表<span class="token function selector">\ref</span><span class="token punctuation">{</span><span class="token keyword">tab-score</span><span class="token punctuation">}</span>所示
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">table</span><span class="token punctuation">}</span><span class="token punctuation">[</span>h<span class="token punctuation">]</span>
+        <span class="token function selector">\centering</span>
+        <span class="token function selector">\caption</span><span class="token punctuation">{</span>成绩单<span class="token punctuation">}</span><span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">tab-score</span><span class="token punctuation">}</span>
+        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span><span class="token punctuation">{</span>||l|| c |c |c |p<span class="token punctuation">{</span>2cm<span class="token punctuation">}</span>||<span class="token punctuation">}</span><span class="token comment" spellcheck="true">%lcr对齐方式左中右%p为固定宽度</span>
+            <span class="token function selector">\hline</span>
+            姓名 <span class="token punctuation">&amp;</span> 语文 <span class="token punctuation">&amp;</span> 数学 <span class="token punctuation">&amp;</span> 外语 <span class="token punctuation">&amp;</span> 备注 <span class="token function selector">\\</span>
+            <span class="token function selector">\hline</span> <span class="token function selector">\hline</span>
+            A <span class="token punctuation">&amp;</span> 99 <span class="token punctuation">&amp;</span> 56 <span class="token punctuation">&amp;</span> 32 <span class="token punctuation">&amp;</span> ddsfsdfdsfdsfdsfdsf <span class="token function selector">\\</span>
+            <span class="token function selector">\hline</span>
+            B <span class="token punctuation">&amp;</span> 语文 <span class="token punctuation">&amp;</span> 数学 <span class="token punctuation">&amp;</span> 外语 <span class="token punctuation">&amp;</span> d <span class="token function selector">\\</span>
+            <span class="token function selector">\hline</span>
+            C <span class="token punctuation">&amp;</span> 语文 <span class="token punctuation">&amp;</span> 数学 <span class="token punctuation">&amp;</span> 外语 <span class="token punctuation">&amp;</span> s <span class="token function selector">\\</span>
+            <span class="token function selector">\hline</span>
+            D <span class="token punctuation">&amp;</span> 语文 <span class="token punctuation">&amp;</span> 数学 <span class="token punctuation">&amp;</span> 外语 <span class="token punctuation">&amp;</span> z <span class="token function selector">\\</span>
+            <span class="token function selector">\hline</span>
+            E <span class="token punctuation">&amp;</span> 语文 <span class="token punctuation">&amp;</span> 数学 <span class="token punctuation">&amp;</span> 外语 <span class="token punctuation">&amp;</span> d <span class="token function selector">\\</span>
+            <span class="token function selector">\hline</span>
+            <span class="token comment" spellcheck="true">%\\表示换行，&amp;表示不同列%p为宽度固定能自动换行</span>
+        <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">table</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
+        <span class="token function selector">\centering</span>
+            <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=2cm<span class="token punctuation">]</span><span class="token punctuation">{</span>figures/VSquick.jpg<span class="token punctuation">}</span>
+            <span class="token function selector">\caption</span><span class="token punctuation">{</span><span class="token function selector">\LaTeX</span> 系统2<span class="token punctuation">}</span><span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">fig-lion2</span><span class="token punctuation">}</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
+        <span class="token function selector">\centering</span>
+            <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=2cm<span class="token punctuation">]</span><span class="token punctuation">{</span>figures/VSquick.jpg<span class="token punctuation">}</span>
+            <span class="token function selector">\caption</span><span class="token punctuation">{</span><span class="token function selector">\LaTeX</span> 系统3<span class="token punctuation">}</span><span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">fig-lion3</span><span class="token punctuation">}</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%浮动体</span>
+<span class="token comment" spellcheck="true">%实现灵活分页</span>
+<span class="token comment" spellcheck="true">% 交叉引用</span>
+<span class="token comment" spellcheck="true">% figure环境</span>
+<span class="token comment" spellcheck="true">% \begin{figure}[&lt;允许位置>]</span>
+    <span class="token comment" spellcheck="true">% h,此处 here-代码所在的上下文位置</span>
+    <span class="token comment" spellcheck="true">% t，页顶 top-代码所页面或之后页面的顶部</span>
+    <span class="token comment" spellcheck="true">% b，bottom-代码所页面或之后页面的底部</span>
+    <span class="token comment" spellcheck="true">% p，独立一页page-浮动页面</span>
+
+    <span class="token comment" spellcheck="true">% 标题控制{caption，bicaption}</span>
+    <span class="token comment" spellcheck="true">% 并排与子图表（subcaption，subfig，floatrow等宏包）</span>
+    <span class="token comment" spellcheck="true">% 绕排（picinpar，wrapfig等宏包）</span>
+<span class="token comment" spellcheck="true">% \end{figure}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexbook</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+
+<span class="token function selector">\title</span><span class="token punctuation">{</span>My First Document<span class="token punctuation">}</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">简介</span><span class="token punctuation">}</span>
+    <span class="token function selector">\LaTeX</span><span class="token punctuation">{</span><span class="token punctuation">}</span>将排版内容分为文本模式和数学模式。文本模式用于普通文本排版
+    数学模式用于数学公式排版
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">行内公式</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">美元符号</span><span class="token punctuation">}</span>
+        交换律是 <span class="token equation string">$a+b=b+a$</span>,如 <span class="token equation string">$1+2=5-2$</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">小括号</span><span class="token punctuation">}</span>
+        交换律是 <span class="token equation string">\(a+b=b+a\)</span>,如 <span class="token equation string">$1+2=5-2$</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">math环境</span><span class="token punctuation">}</span>
+        交换律是 <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">math</span><span class="token punctuation">}</span><span class="token equation string">
+            a+b=b+a
+        </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">math</span><span class="token punctuation">}</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">上下标</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">上标</span><span class="token punctuation">}</span>
+        <span class="token equation string">$3x^2 - x + 2 = 0$</span>
+        <span class="token equation string">$3x^{20-2} - x + 2 = 0$</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">下标</span><span class="token punctuation">}</span>
+        <span class="token equation string">$a_0,a_1,a_{200}$</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">希腊字母</span><span class="token punctuation">}</span>
+    <span class="token equation string">$<span class="token equation-command regex">\alpha</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\beta</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\gamma</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\epsilon</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\pi</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\omega</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\delta</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\theta</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\Pi</span>$</span>
+    <span class="token equation string">$<span class="token equation-command regex">\Omega</span>$</span>
+    <span class="token equation string">\(<span class="token equation-command regex">\alpha</span>^3 + <span class="token equation-command regex">\beta</span>^2 + <span class="token equation-command regex">\gamma</span> = 0\)</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">数学函数</span><span class="token punctuation">}</span>
+    <span class="token equation string">\(log\)</span>
+    <span class="token equation string">\(sin\)</span>
+    <span class="token equation string">\(cos\)</span>
+    <span class="token equation string">\(arcsin\)</span>
+    <span class="token equation string">\(arccos\)</span>
+    <span class="token equation string">\(ln\)</span>
+    <span class="token equation string">\(sin^2 x+<span class="token equation-command regex">\cos</span>^2x=1\)</span> <span class="token function selector">\\</span>
+    <span class="token equation string">\(y = <span class="token equation-command regex">\sin</span>^{-1}x \)</span> <span class="token function selector">\\</span>
+    <span class="token equation string">\(y = <span class="token equation-command regex">\ln</span> x\)</span> <span class="token function selector">\\</span>
+    <span class="token equation string">\(sqrt{x^2 + y^2}\)</span> <span class="token function selector">\\</span>
+    <span class="token equation string">\(sqrt{2 + <span class="token equation-command regex">\sqrt</span>{2}}\)</span> <span class="token function selector">\\</span>
+    <span class="token equation string">\(sqrt[4]x\)</span><span class="token comment" spellcheck="true">%4为开放次数</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">分式</span><span class="token punctuation">}</span>
+    大约是原体积的<span class="token equation string">\(3/4\)</span> <span class="token function selector">\\</span>
+    大约是原体积的<span class="token equation string">$<span class="token equation-command regex">\frac</span>{3}{4}$</span> <span class="token function selector">\\</span>
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">行间公式</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">美元符号</span><span class="token punctuation">}</span>
+        交换律为
+        <span class="token equation string">$$</span>a+b=b+a<span class="token equation string">$$</span>
+        如
+        <span class="token equation string">$$</span>1+2=2+1<span class="token equation string">$$</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">中括号</span><span class="token punctuation">}</span>
+        交换律是
+        <span class="token equation string">\[a+b=b+a\]</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">displaymath环境</span><span class="token punctuation">}</span>
+        交换律是
+        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">displaymath</span><span class="token punctuation">}</span>
+            a+b=b+a
+        <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">displaymath</span><span class="token punctuation">}</span>
+        <span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">自动编号公式equation环境</span><span class="token punctuation">}</span>
+        交换律见公式<span class="token function selector">\ref</span><span class="token punctuation">{</span><span class="token keyword">eq:commutative</span><span class="token punctuation">}</span>
+        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span><span class="token equation string">
+            a+b=b+a 
+        </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span><span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">eq:commutative</span><span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">% 交换律见式\ref{eq:commutative3}</span>
+        <span class="token comment" spellcheck="true">% \begin{equation*}</span>
+        <span class="token comment" spellcheck="true">%     a+b=b+a \label{eq:commutative3}</span>
+        <span class="token comment" spellcheck="true">% \end{equation*}</span>
+        <span class="token function selector">\par</span> 利用自动化
+    <span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">致谢</span><span class="token punctuation">}</span>
+
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="数学矩阵处理"><a href="#数学矩阵处理" class="headerlink" title="数学矩阵处理"></a>数学矩阵处理</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexbook</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">amsmath</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%矩阵的宏包</span>
+<span class="token function selector">\title</span><span class="token punctuation">{</span>My First Document<span class="token punctuation">}</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%矩阵环境，用&amp;分割列，\\分割行row</span>
+    \<span class="token punctuation">[</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+        0 <span class="token punctuation">&amp;</span> -1<span class="token function selector">\\</span>
+        i <span class="token punctuation">&amp;</span> 0
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span> 
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">pmatrix</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%小括号</span>
+        0 <span class="token punctuation">&amp;</span> -1<span class="token function selector">\\</span>
+        i <span class="token punctuation">&amp;</span> 0   
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">pmatrix</span><span class="token punctuation">}</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">bmatrix</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中括号</span>
+        0 <span class="token punctuation">&amp;</span> -1<span class="token function selector">\\</span>
+        i <span class="token punctuation">&amp;</span> 0   
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">bmatrix</span><span class="token punctuation">}</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">Bmatrix</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%大括号</span>
+        0 <span class="token punctuation">&amp;</span> -1<span class="token function selector">\\</span>
+        i <span class="token punctuation">&amp;</span> 0   
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">Bmatrix</span><span class="token punctuation">}</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">vmatrix</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%单竖线</span>
+        0 <span class="token punctuation">&amp;</span> -1<span class="token function selector">\\</span>
+        i <span class="token punctuation">&amp;</span> 0   
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">vmatrix</span><span class="token punctuation">}</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">Vmatrix</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%双竖线</span>
+        0 <span class="token punctuation">&amp;</span> -1<span class="token function selector">\\</span>
+        i <span class="token punctuation">&amp;</span> 0   
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">Vmatrix</span><span class="token punctuation">}</span>
+    \<span class="token punctuation">]</span>
+    \<span class="token punctuation">[</span>
+        <span class="token comment" spellcheck="true">%可以使用上下标</span>
+    A= <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">pmatrix</span><span class="token punctuation">}</span>
+        A_<span class="token punctuation">{</span>11<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>12<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>13<span class="token punctuation">}</span>^2 <span class="token function selector">\\</span>
+        A_<span class="token punctuation">{</span>11<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>12<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>13<span class="token punctuation">}</span>^2 <span class="token function selector">\\</span>
+        A_<span class="token punctuation">{</span>11<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>12<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>13<span class="token punctuation">}</span>^2 <span class="token function selector">\\</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">pmatrix</span><span class="token punctuation">}</span>    
+    \<span class="token punctuation">]</span>
+    \<span class="token punctuation">[</span>
+    <span class="token comment" spellcheck="true">%常用省略号：\dots \vdots \ddots</span>
+    <span class="token comment" spellcheck="true">%乘号\times</span>
+    A= <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">bmatrix</span><span class="token punctuation">}</span>
+        a_<span class="token punctuation">{</span>11<span class="token punctuation">}</span>^2 <span class="token punctuation">&amp;</span> <span class="token function selector">\dots</span> <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>1n<span class="token punctuation">}</span>^2 <span class="token function selector">\\</span>
+                 <span class="token punctuation">&amp;</span> <span class="token function selector">\ddots</span> <span class="token punctuation">&amp;</span> <span class="token function selector">\vdots</span> <span class="token function selector">\\</span>
+        0        <span class="token punctuation">&amp;</span>       <span class="token punctuation">&amp;</span> a_<span class="token punctuation">{</span>nn<span class="token punctuation">}</span>^2 <span class="token function selector">\\</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">bmatrix</span><span class="token punctuation">}</span>_<span class="token punctuation">{</span>n <span class="token function selector">\times</span> n<span class="token punctuation">}</span>    
+    \<span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true">%分块矩阵（矩阵嵌套）</span>
+    <span class="token equation string">\[
+    <span class="token equation-command regex">\begin</span>{pmatrix}
+        <span class="token equation-command regex">\begin</span>{matrix}
+            1&amp;1<span class="token equation-command regex">\\</span>0&amp;1
+        <span class="token equation-command regex">\end</span>{matrix}&amp; <span class="token equation-command regex">\text</span>{<span class="token equation-command regex">\large</span> 0}<span class="token equation-command regex">\\</span>
+        <span class="token equation-command regex">\begin</span>{matrix}
+            1&amp;1<span class="token equation-command regex">\\</span>0&amp;1
+        <span class="token equation-command regex">\end</span>{matrix}&amp; <span class="token equation-command regex">\text</span>{<span class="token equation-command regex">\large</span> 0}<span class="token equation-command regex">\\</span>
+    <span class="token equation-command regex">\end</span>{pmatrix}    
+    \]</span>
+    <span class="token comment" spellcheck="true">%三角矩阵</span>
+    <span class="token comment" spellcheck="true">% \[</span>
+    <span class="token comment" spellcheck="true">% \begin{pmatrix}</span>
+    <span class="token comment" spellcheck="true">%     \multicolumn{2}{c}{\raisebox{1.3ex}[0pt]{\Huge 0}}    \end{pmatrix}\]</span>
+
+    <span class="token comment" spellcheck="true">%行内小矩阵(smallmatrix)环境</span>
+    复数 <span class="token equation string">$z=(x,y)$</span> 也可用矩阵
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">math</span><span class="token punctuation">}</span>
+        <span class="token function selector">\left</span>(<span class="token comment" spellcheck="true">%手动左括号</span>
+        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">smallmatrix</span><span class="token punctuation">}</span>
+        x <span class="token punctuation">&amp;</span> -y <span class="token function selector">\\</span> y <span class="token punctuation">&amp;</span> x
+        <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">smallmatrix</span><span class="token punctuation">}</span>
+        <span class="token function selector">\right</span>)
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">math</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%array环境{r|r}类似tabular</span>
+    <span class="token equation string">\[
+    <span class="token equation-command regex">\begin</span>{array}{r|r}
+        <span class="token equation-command regex">\frac</span>{1}{2}&amp;0<span class="token equation-command regex">\\</span>
+        <span class="token equation-command regex">\hline</span>
+        0 &amp; -<span class="token equation-command regex">\frac</span>{a}{b}c<span class="token equation-command regex">\\</span>
+        <span class="token equation-command regex">\end</span>{array}\]</span>
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="多行数学公式"><a href="#多行数学公式" class="headerlink" title="多行数学公式"></a>多行数学公式</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
+<span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">ctexart</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%中文</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">amsmath</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">amssymb</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\title</span><span class="token punctuation">{</span>My First Document<span class="token punctuation">}</span>
+<span class="token function selector">\author</span><span class="token punctuation">{</span>merca<span class="token punctuation">}</span>
+<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">%正文区(文稿区)</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">%gather 和 gather*环境使用\\换行</span>
+<span class="token comment" spellcheck="true">%带编号</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">gather</span><span class="token punctuation">}</span><span class="token equation string">
+        a +b=b+a<span class="token equation-command regex">\\</span>
+        ab ba
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">gather</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">gather*</span><span class="token punctuation">}</span><span class="token equation string">
+        3+5<span class="token equation-command regex">\\</span>
+        2+3
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">gather*</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">gather</span><span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">%notag阻止编号</span>
+        a +b=b+a <span class="token function selector">\notag</span><span class="token function selector">\\</span>
+        ab ba <span class="token function selector">\notag</span><span class="token function selector">\\</span>
+        sdf966
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">gather</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%align和align*环境（用&amp;进行对齐）</span>
+    <span class="token comment" spellcheck="true">%带编号</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">align</span><span class="token punctuation">}</span><span class="token equation string">
+        x &amp;=t+<span class="token equation-command regex">\cos</span> t +1<span class="token equation-command regex">\\</span>
+        y &amp;= 2<span class="token equation-command regex">\sin</span> t
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">align</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%split环境（对齐采用align环境的方式，编号在中间）</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span><span class="token equation string">
+        <span class="token equation-command regex">\begin</span>{split}
+            <span class="token equation-command regex">\cos</span> 2x &amp;= <span class="token equation-command regex">\cos</span>^2x - <span class="token equation-command regex">\sin</span>^2x<span class="token equation-command regex">\\</span>
+            &amp;= 2<span class="token equation-command regex">\cos</span>^2x -1
+        <span class="token equation-command regex">\end</span>{split}
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">%cases 环境</span>
+    <span class="token comment" spellcheck="true">%每行公式使用&amp;分隔成两部分</span>
+    <span class="token comment" spellcheck="true">%通常表示值和后面的条件</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span><span class="token equation string">
+        D(x) = <span class="token equation-command regex">\begin</span>{cases}
+        1,&amp;<span class="token equation-command regex">\text</span>{如果} x <span class="token equation-command regex">\in</span> <span class="token equation-command regex">\mathbb</span>{Q};<span class="token equation-command regex">\\</span>
+        0,&amp;<span class="token equation-command regex">\text</span>{如果}x <span class="token equation-command regex">\in</span> <span class="token equation-command regex">\mathbb</span>{R}<span class="token equation-command regex">\setminus</span><span class="token equation-command regex">\mathbb</span>{Q}
+        <span class="token equation-command regex">\end</span>{cases}
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        share
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/17/Latex-note/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/03/17/Notepad-note/" class="article-nav-link">
+        <strong class="article-nav-caption">prev</strong>
+        <div class="article-nav-title">
+          
+            Notepad++ Note
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/17/Markdown-note/" class="article-nav-link">
+        <strong class="article-nav-caption">next</strong>
+        <div class="article-nav-title">Markdown Note</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "RtpkUwFtXvmt82QeX80OhMh8-gzGzoHsz",
+    app_key: "4ibEQkn78BGa03zP9zX7K50s",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2018-2020
+        <i class="ri-heart-fill heart_icon"></i> Quincy
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1279380206&amp;web_id=1279380206'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="MercaPH"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我吃串串呗~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<!-- Tocbot -->
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+<script src="/dist/main.js"></script>
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+<link rel="stylesheet" href="/css/clipboard.css">
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+<script src="/js/dz.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>

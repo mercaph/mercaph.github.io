@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MercaPH</title>
+  
+  <subtitle>merca</subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-11-25T14:40:04.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Quincy</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SumatraPDF opens multiple windows</title>
+    <link href="http://yoursite.com/2020/11/25/SumatraPDF-opens-multiple-windows/"/>
+    <id>http://yoursite.com/2020/11/25/SumatraPDF-opens-multiple-windows/</id>
+    <published>2020-11-25T14:40:04.000Z</published>
+    <updated>2020-11-25T14:40:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VScode Automatically wrap according to screen width</title>
+    <link href="http://yoursite.com/2020/11/25/VScode-Automatically-wrap-according-to-screen-width/"/>
+    <id>http://yoursite.com/2020/11/25/VScode-Automatically-wrap-according-to-screen-width/</id>
+    <published>2020-11-25T13:31:13.000Z</published>
+    <updated>2020-11-25T13:31:13.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
+    
+    
+    <category term="VScode" scheme="http://yoursite.com/tags/VScode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Common software log</title>
+    <link href="http://yoursite.com/2020/11/25/Common-software-log/"/>
+    <id>http://yoursite.com/2020/11/25/Common-software-log/</id>
+    <published>2020-11-25T13:29:30.000Z</published>
+    <updated>2020-11-25T13:29:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Commonly use~&lt;br&gt;</summary>
+    
+    
+    
+    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
+    
+    <category term="Log" scheme="http://yoursite.com/categories/Local-logging/Log/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Reinstall Record_20201121</title>
+    <link href="http://yoursite.com/2020/11/25/Reinstall-Record-20201121/"/>
+    <id>http://yoursite.com/2020/11/25/Reinstall-Record-20201121/</id>
+    <published>2020-11-25T13:23:11.000Z</published>
+    <updated>2020-11-25T13:23:11.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Friends, make backups of important files🤣&lt;br&gt;</summary>
+    
+    
+    
+    <category term="Operating record" scheme="http://yoursite.com/categories/Operating-record/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ZEMAX Notes</title>
+    <link href="http://yoursite.com/2020/11/19/ZEMAX-notes/"/>
+    <id>http://yoursite.com/2020/11/19/ZEMAX-notes/</id>
+    <published>2020-11-19T11:50:13.000Z</published>
+    <updated>2020-11-19T11:50:13.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;ZEMAX RAY-TRACING EXECRISE NOTES FROM OPTICAL CONSTRUCTION COURSE</summary>
+    
+    
+    
+    <category term="Learning notes" scheme="http://yoursite.com/categories/Learning-notes/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jotting_0x7DB</title>
+    <link href="http://yoursite.com/2020/11/02/Jotting-0x7DB/"/>
+    <id>http://yoursite.com/2020/11/02/Jotting-0x7DB/</id>
+    <published>2020-11-02T05:17:56.000Z</published>
+    <updated>2018-04-10T04:17:56.000Z</updated>
+    
+    
+    <summary type="html">This article is encrypted.</summary>
+    
+    
+    
+    <category term="Jottings" scheme="http://yoursite.com/categories/Jottings/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jotting_7E4B</title>
+    <link href="http://yoursite.com/2020/11/02/Jotting-7E4B/"/>
+    <id>http://yoursite.com/2020/11/02/Jotting-7E4B/</id>
+    <published>2020-11-02T05:16:46.000Z</published>
+    <updated>2020-04-02T04:16:46.000Z</updated>
+    
+    
+    <summary type="html">Noviembre</summary>
+    
+    
+    
+    <category term="Jottings" scheme="http://yoursite.com/categories/Jottings/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AE Notes</title>
+    <link href="http://yoursite.com/2020/10/29/AE-notes/"/>
+    <id>http://yoursite.com/2020/10/29/AE-notes/</id>
+    <published>2020-10-29T09:53:40.000Z</published>
+    <updated>2020-10-29T09:53:40.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;把17年写的星月兮的记录迁移一下~</summary>
+    
+    
+    
+    <category term="Design" scheme="http://yoursite.com/categories/Design/"/>
+    
+    <category term="Video/Audio" scheme="http://yoursite.com/categories/Design/Video-Audio/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Pr Notes</title>
+    <link href="http://yoursite.com/2020/10/29/PR-notes/"/>
+    <id>http://yoursite.com/2020/10/29/PR-notes/</id>
+    <published>2020-10-29T09:53:28.000Z</published>
+    <updated>2020-10-29T09:53:28.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在宣传部的日子天天和Adobe全家桶打交道，乙方日子过久了，熬夜剪视频写脚本做海报的日子习惯了，奇怪的要求也听多了，这两年退休的日子没被虐还不习惯doge0&lt;br&gt;怕给忘了，把看星月兮的记录迁移一下~</summary>
+    
+    
+    
+    <category term="Design" scheme="http://yoursite.com/categories/Design/"/>
+    
+    <category term="Video/Audio" scheme="http://yoursite.com/categories/Design/Video-Audio/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工科生的瞎涂系列0x01</title>
+    <link href="http://yoursite.com/2020/10/25/%E5%B7%A5%E7%A7%91%E7%94%9F%E7%9A%84%E7%9E%8E%E6%B6%82%E7%B3%BB%E5%88%970x01/"/>
+    <id>http://yoursite.com/2020/10/25/%E5%B7%A5%E7%A7%91%E7%94%9F%E7%9A%84%E7%9E%8E%E6%B6%82%E7%B3%BB%E5%88%970x01/</id>
+    <published>2020-10-25T07:21:38.000Z</published>
+    <updated>2020-10-24T06:21:38.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;好看是第一生产力~😋&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;S2&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;br&gt;  &lt;img src=&quot;/images/00 (4).jpg&quot; alt=&quot;2&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="Design" scheme="http://yoursite.com/categories/Design/"/>
+    
+    <category term="Drawings" scheme="http://yoursite.com/categories/Design/Drawings/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Categories readme</title>
+    <link href="http://yoursite.com/2020/10/25/Categoriesreadme/"/>
+    <id>http://yoursite.com/2020/10/25/Categoriesreadme/</id>
+    <published>2020-10-25T07:10:24.000Z</published>
+    <updated>2020-10-05T06:10:24.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;readme.txt</summary>
+    
+    
+    
+    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
+    
+    <category term="Log" scheme="http://yoursite.com/categories/Local-logging/Log/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Win10下的Vagrant+Virtualbox搭建Linux</title>
+    <link href="http://yoursite.com/2020/10/25/UsingvagrantVirtualBox/"/>
+    <id>http://yoursite.com/2020/10/25/UsingvagrantVirtualBox/</id>
+    <published>2020-10-24T22:12:01.000Z</published>
+    <updated>2020-10-24T22:12:01.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;看看我的WSL出大问题，另辟蹊径了害，，真香😋~</summary>
+    
+    
+    
+    <category term="operating record" scheme="http://yoursite.com/categories/operating-record/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>WSL折腾失败记录</title>
+    <link href="http://yoursite.com/2020/10/24/WSLfail/"/>
+    <id>http://yoursite.com/2020/10/24/WSLfail/</id>
+    <published>2020-10-24T21:35:06.000Z</published>
+    <updated>2020-10-24T21:35:06.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;error: 0x80073701&lt;/strong&gt;&lt;br&gt;这个error搞了我大半天了惹，用尽各种方法，最终放弃了，毕竟是要重装系统的事情…他喵的vegrant他不香吗，VirtualBox不香吗，偏偏要Windows自带的人傻了（但是WSL可以用hyper，好看是第一生产力😭）罢了记录一下，要搞很快的其实，哪天突然windows抽回来我再弄也行~</summary>
+    
+    
+    
+    <category term="operating record" scheme="http://yoursite.com/categories/operating-record/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hyperecord</title>
+    <link href="http://yoursite.com/2020/10/24/Hyperecord/"/>
+    <id>http://yoursite.com/2020/10/24/Hyperecord/</id>
+    <published>2020-10-24T21:29:42.000Z</published>
+    <updated>2020-10-24T21:29:42.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt; .hyper.js</summary>
+    
+    
+    
+    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
+    
+    <category term="Config" scheme="http://yoursite.com/categories/Local-logging/Config/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C盘的余量如何从20G到50G</title>
+    <link href="http://yoursite.com/2020/10/24/Cdrivecleaning/"/>
+    <id>http://yoursite.com/2020/10/24/Cdrivecleaning/</id>
+    <published>2020-10-24T20:39:32.000Z</published>
+    <updated>2020-10-24T20:39:32.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Windows最服气的就是他喵的老是莫名其妙C盘变小（即使平时比不可能装东西到C盘！）看着越来越小的C盘我受不了了，系统文件53.1G惊了！搞它，有手就行！然后它的余量就从20G变成50G了👌</summary>
+    
+    
+    
+    <category term="operating record" scheme="http://yoursite.com/categories/operating-record/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开启或关闭Chrome的通知</title>
+    <link href="http://yoursite.com/2020/10/24/Chromenotificationsonoroff/"/>
+    <id>http://yoursite.com/2020/10/24/Chromenotificationsonoroff/</id>
+    <published>2020-10-24T20:38:37.000Z</published>
+    <updated>2020-10-24T20:38:37.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Annoying! 😡 最近总是有Google chrome 的通知弹出，叮咚叮咚的，有手就行，搞它~</summary>
+    
+    
+    
+    <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LLog_storage</title>
+    <link href="http://yoursite.com/2020/10/23/LLog_storage/"/>
+    <id>http://yoursite.com/2020/10/23/LLog_storage/</id>
+    <published>2020-10-23T06:28:27.000Z</published>
+    <updated>2020-10-23T06:28:27.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Storage</summary>
+    
+    
+    
+    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
+    
+    <category term="Log" scheme="http://yoursite.com/categories/Local-logging/Log/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>_0x7DA1625</title>
+    <link href="http://yoursite.com/2020/10/16/Umn/"/>
+    <id>http://yoursite.com/2020/10/16/Umn/</id>
+    <published>2020-10-16T10:54:39.000Z</published>
+    <updated>2018-10-16T10:54:39.000Z</updated>
+    
+    
+    <summary type="html">This article is encrypted.</summary>
+    
+    
+    
+    <category term="Jottings" scheme="http://yoursite.com/categories/Jottings/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Umeå 留学攻略</title>
+    <link href="http://yoursite.com/2020/10/16/Guide-to-Studying-in-umea-U/"/>
+    <id>http://yoursite.com/2020/10/16/Guide-to-Studying-in-umea-U/</id>
+    <published>2020-10-16T08:21:36.000Z</published>
+    <updated>2020-10-16T08:21:36.000Z</updated>
+    
+    
+    <summary type="html">迁移PDF，代代相传的于村指南~</summary>
+    
+    
+    
+    <category term="Guide" scheme="http://yoursite.com/categories/Guide/"/>
+    
+    
+    <category term="Umeå" scheme="http://yoursite.com/tags/Umea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo writting tips</title>
+    <link href="http://yoursite.com/2020/10/15/Hexo%20writting%20tips/"/>
+    <id>http://yoursite.com/2020/10/15/Hexo%20writting%20tips/</id>
+    <published>2020-10-15T09:18:41.000Z</published>
+    <updated>2020-11-19T10:18:41.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Sometimes markdown is not enough to write the blog, there is even no rendering. So html is relatively stable.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
+    
+    
+    <category term="Html" scheme="http://yoursite.com/tags/Html/"/>
+    
+    <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

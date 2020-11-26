@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="MercaPH" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Matlab Notes |  MercaPH
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/dist/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="MercaPH" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-duotone-sea.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Matlab-note"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Matlab Notes
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      
+
+	<a href="/2020/03/17/Matlab-note/" class="article-date">
+	  Published <time datetime="2020-03-17T19:44:26.000Z" itemprop="datePublished">2020-03-17</time>
+	</a>
+ 
+	<a href="/2020/03/17/Matlab-note/" class="article-date">
+	  Updated <time datetime="2020-03-21T19:44:26.000Z" itemprop="dateUpdated">2020-03-21</time>
+	</a>
+
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/learning-notes/">learning notes</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">18 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>Matlab 小记<br><a id="more"></a></p>
+<h1 id="BASIC"><a href="#BASIC" class="headerlink" title="BASIC"></a>BASIC</h1><p><strong>frequent use:</strong></p>
+<ul>
+<li>arithmetrc<br>trigonometry<br>exponents and logarithms<br>complex numbers<br>cartesian coordinate</li>
+</ul>
+<hr>
+<p><strong>embedding functions:</strong><br>sin(cos(pi))<br>cos(pi)  %储存到ans里面<br>sin(ans)</p>
+<hr>
+<p>LHS = RHS<br>不可换左右<br>variables 不可以开头为数字<br>logical;char;numbic<br>defult:double</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> whos<span class="token comment" spellcheck="true">%问变量的详细资料</span>
+<span class="token operator">></span><span class="token operator">></span>who
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<ul>
+<li><strong>Keyword</strong><br>ans%keyword<br>i,j%complex numbers<br>inf:indefintlly<pre><code>1/0=inf
+</code></pre>eps:   很小<br>NaN：非数值<pre><code>inf/inf
+</code></pre>pi: Π<br>sqrt() or ()^0.5<br>ln is log<br>exp<br>log10()    log2()%base 10,2<br><code>&gt;&gt;iskeyword  %查看哪个是keyword</code></li>
+</ul>
+<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><pre class="line-numbers language-matlab"><code class="language-matlab">row vector
+    `<span class="token operator">></span><span class="token operator">></span>a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span>`
+column vector
+    `<span class="token operator">></span><span class="token operator">></span>b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">%分号代表换行`</span>
+a<span class="token operator">*</span>b
+b<span class="token operator">*</span>a
+A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token punctuation">;</span><span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="array-indexing"><a href="#array-indexing" class="headerlink" title="array indexing"></a>array indexing</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%找特定位置的值</span>
+    索引方式<span class="token operator">:</span>
+    ```
+    A    <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">4</span> <span class="token number">7</span><span class="token punctuation">]</span>
+        <span class="token punctuation">[</span><span class="token number">2</span> <span class="token number">5</span> <span class="token number">8</span><span class="token punctuation">]</span>
+        <span class="token punctuation">[</span><span class="token number">3</span> <span class="token number">6</span> <span class="token number">9</span><span class="token punctuation">]</span>
+    ```
+<span class="token function">A</span><span class="token punctuation">(</span>row<span class="token punctuation">,</span>column<span class="token punctuation">)</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">3</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%第一第三第五</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">1</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%一个矩阵</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span>
+    <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span>row row<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>col col<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    行与列的交集
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="Replacing-Entries"><a href="#Replacing-Entries" class="headerlink" title="Replacing Entries"></a>Replacing Entries</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">76</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><strong>Colon Operator:</strong><pre><code>用来做等差级数
+  A=[1:100]%[first:last]
+  A=1:2:99%等差为2
+  B=[1:5;2:3:15;-2:0.5:0]
+  str=&#39;a&#39;:2:&#39;z&#39;
+  A(3,:)%第三行
+  A(3,:)=[]%delete第三行
+  delete rows of columns of A
+</code></pre></li>
+</ul>
+<h2 id="Array-Concatenation"><a href="#Array-Concatenation" class="headerlink" title="Array Concatenation"></a>Array Concatenation</h2><pre class="line-numbers language-matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token punctuation">;</span><span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span>
+B<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">9</span> <span class="token number">9</span> <span class="token punctuation">;</span><span class="token number">9</span> <span class="token number">9</span><span class="token punctuation">]</span>
+F<span class="token operator">=</span><span class="token punctuation">[</span>A B<span class="token punctuation">]</span><span class="token punctuation">;</span>F<span class="token punctuation">[</span>A<span class="token punctuation">;</span>B<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Array-Manipulation"><a href="#Array-Manipulation" class="headerlink" title="Array Manipulation"></a>Array Manipulation</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token operator">+</span> <span class="token operator">-</span> <span class="token operator">*</span> <span class="token operator">/</span> <span class="token operator">^</span> <span class="token punctuation">.</span> <span class="token operator">'</span>
+A<span class="token operator">*</span>B<span class="token comment" spellcheck="true">%矩阵相乘</span>
+A<span class="token operator">.*</span>B<span class="token comment" spellcheck="true">%点乘各个元素对应相乘</span>
+A<span class="token operator">/</span>B<span class="token operator">==</span>A<span class="token operator">*</span><span class="token function">inv</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>
+A<span class="token operator">./</span>B
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>A+a%矩阵＋实数，每个元素加標量<br>A^a=A*A<br>A.^a=个别取两次方<br>C=A’%转置对角线转置</p>
+<h2 id="Some-Special-Matrix"><a href="#Some-Special-Matrix" class="headerlink" title="Some Special Matrix"></a>Some Special Matrix</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">eye</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>nXn identity matrix
+<span class="token function">zeros</span><span class="token punctuation">(</span>n1<span class="token punctuation">,</span>n2<span class="token punctuation">)</span>n1Xn2zero matrix
+<span class="token function">ones</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span>every entry as <span class="token number">1</span>
+<span class="token function">diag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>diagonal matrix对角线矩阵
+<span class="token function">diag</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>对角线<span class="token number">234</span>
+rand
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions:"></a>Functions:</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">max</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token comment" spellcheck="true">%每列的最大项</span>
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%全部最大项</span>
+<span class="token function">min</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+<span class="token function">sum</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+<span class="token function">mean</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment" spellcheck="true">%每列平均值</span>
+<span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%每个column大小排序</span>
+    从小排到大
+<span class="token function">sortrows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%第一列的大小排序</span>
+行
+<span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token comment" spellcheck="true">%row col</span>
+<span class="token function">length</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token comment" spellcheck="true">%vector 的</span>
+<span class="token function">find</span><span class="token punctuation">(</span>A<span class="token operator">==</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%返回一个数的位置</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h1><h2 id="script"><a href="#script" class="headerlink" title="script"></a>script</h2><p>(F5) run<br>fx按钮找公式<br>%百分比符号<br>右键command<br>%%section,用来分节，可以运行节<br>run section<br>断点点行前面</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>ctrl+R注释<br>Ctrl+T取消注释<br>Ctrl+I智能排版</p>
+<h1 id="Structured-programming-techniques"><a href="#Structured-programming-techniques" class="headerlink" title="Structured programming techniques"></a>Structured programming techniques</h1><h2 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h2><p>if,elseif,else<br>for switch case ot herwise<br>try catch<br>while<br>break<br>continue<br>endpause<br>return</p>
+<h2 id="relational-logical"><a href="#relational-logical" class="headerlink" title="relational logical"></a>relational logical</h2><p>if(condition) rational operation</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token operator">&lt;</span> less than <span class="token operator">&lt;=</span> less than or equal to
+<span class="token operator">></span> greater than
+<span class="token operator">==</span> equal to
+<span class="token operator">~=</span> not equal to 
+<span class="token operator">&amp;&amp;</span> and
+<span class="token operator">||</span> or
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="if-elseif-else"><a href="#if-elseif-else" class="headerlink" title="if elseif else"></a>if elseif else</h2><p>if condition 1<br>    statement1<br>elseif condition2<br>    statement2<br>else<br>    statement3<br>end</p>
+<h3 id="for-instance"><a href="#for-instance" class="headerlink" title="for instance"></a>for instance</h3><pre class="line-numbers language-matlab"><code class="language-matlab">a<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token function">rem</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span>  <span class="token comment" spellcheck="true">%a除以2余数为0</span>
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'a is even'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%偶数</span>
+<span class="token keyword">else</span>
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'a is odd'</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><p>switch expression<br>case value1<br>    statement1<br>case value2<br>    statement2<br>.<br>.<br>otherwise<br>    statement<br>end</p>
+<h3 id="for-instance-1"><a href="#for-instance-1" class="headerlink" title="for instance"></a>for instance</h3><pre class="line-numbers language-matlab"><code class="language-matlab">input_num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">switch</span> input_num
+<span class="token keyword">case</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'negative 1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">case</span> <span class="token number">0</span>
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'zeros'</span><span class="token punctuation">)</span>
+<span class="token keyword">case</span> <span class="token number">1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token keyword">while</span> expression
+    statement
+<span class="token keyword">end</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="for-instance-2"><a href="#for-instance-2" class="headerlink" title="for instance"></a>for instance</h3><pre class="line-numbers language-matlab"><code class="language-matlab">n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token function">prod</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span>n<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">1e100</span> <span class="token comment" spellcheck="true">%product阶乘 n！&lt;10^100</span>
+    n<span class="token operator">=</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token keyword">for</span> variable<span class="token operator">=</span>start<span class="token operator">:</span>increment <span class="token operator">:</span><span class="token keyword">end</span>
+    commands
+<span class="token keyword">end</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="for-instance-3"><a href="#for-instance-3" class="headerlink" title="for instance"></a>for instance</h3><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token keyword">for</span> n<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span>
+    <span class="token function">a</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">2</span><span class="token operator">^</span>n<span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+<span class="token function">disp</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+clear a
+
+<span class="token keyword">for</span> n<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">10</span>
+    <span class="token function">a</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">2</span><span class="token operator">^</span>n<span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+<span class="token comment" spellcheck="true">%n在变在改变array的大小</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>not pre-allocating</strong></p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">tic
+<span class="token keyword">for</span> ii <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">2000</span>
+    <span class="token keyword">for</span> jj <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">2000</span>
+        <span class="token function">A</span><span class="token punctuation">(</span>ii<span class="token punctuation">,</span>jj<span class="token punctuation">)</span> <span class="token operator">=</span> ii<span class="token operator">+</span>jj<span class="token punctuation">;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+toc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>pre-allocating提前扩展空间</strong></p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tic<span class="token comment" spellcheck="true">%时间开始</span>
+<span class="token keyword">for</span> ii <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">2000</span>
+    <span class="token keyword">for</span> jj <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">2000</span>
+        <span class="token function">A</span><span class="token punctuation">(</span>ii<span class="token punctuation">,</span>jj<span class="token punctuation">)</span> <span class="token operator">=</span> ii<span class="token operator">+</span>jj<span class="token punctuation">;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+toc<span class="token comment" spellcheck="true">%计时结束</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#inclue&lt;stdio.h></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">int</span> count<span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>count<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>count<span class="token operator">&lt;=</span><span class="token number">500</span><span class="token punctuation">;</span>count<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"I wei"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token operator">></span><span class="token keyword">break</span><span class="token comment" spellcheck="true">%调出一次循环</span>
+
+    <span class="token keyword">while</span> error <span class="token operator">></span> error_threshold
+        <span class="token keyword">if</span> k<span class="token operator">></span><span class="token number">100</span>
+            <span class="token keyword">break</span>
+        <span class="token keyword">end</span>
+        clc        
+    <span class="token keyword">end</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Tips-for-Script-Writing"><a href="#Tips-for-Script-Writing" class="headerlink" title="Tips for Script Writing"></a>Tips for Script Writing</h2><ol>
+<li>clear all %remove previous variable</li>
+<li>close all %to close all fig</li>
+<li>use semicolon; at the end of commands to inhibit unwanted output</li>
+<li>Use ellipsis… to make scripts more readable</li>
+<li>A = [1 2 3 4 5 6 ;…%用来连接两行<br>6 5 6 1 5 1];</li>
+<li><p>宕机时ctrl + c强行终止</p>
+<h1 id="Variables-string-structure-cell"><a href="#Variables-string-structure-cell" class="headerlink" title="Variables:string ,structure,cell"></a>Variables:string ,structure,cell</h1><p><strong>Multidimensional Array</strong></p>
+<ul>
+<li>logical逻辑<ul>
+<li>0，1</li>
+</ul>
+</li>
+<li>char<ul>
+<li>a,b..</li>
+</ul>
+</li>
+<li><strong>numeric数值</strong><ul>
+<li>int8 <code>8bit</code>,uint8 <code>nsigned</code>,single,double <code>defult</code><br>int16,uint16,<br>int64,uint64</li>
+</ul>
+</li>
+<li>cell</li>
+<li>struct</li>
+</ul>
+</li>
+</ol>
+<p>Scalar<br>function handle(@)</p>
+<hr>
+<pre class="line-numbers language-matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token number">20</span>
+B<span class="token operator">=</span><span class="token function">int8</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+B<span class="token operator">=</span><span class="token function">int8</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Character-char"><a href="#Character-char" class="headerlink" title="Character (char)"></a>Character (char)</h2><pre class="line-numbers language-matlab"><code class="language-matlab">s1 <span class="token operator">=</span> <span class="token string">'h'</span>
+whos <span class="token comment" spellcheck="true">%显示多少个变数</span>
+<span class="token function">uint16</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%结果是ascii码的decimal</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>An array collects characters:</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">s1 <span class="token operator">=</span> <span class="token string">'Example'</span><span class="token punctuation">;</span>
+s2 <span class="token operator">=</span> <span class="token string">'String'</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>String concatenation</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">s3 <span class="token operator">=</span> <span class="token punctuation">[</span>s1 s2<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%output：s3 =</span><span class="token string">'ExampleString'</span>
+s4 <span class="token operator">=</span> <span class="token punctuation">[</span>s1 <span class="token punctuation">;</span> s2<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%error：串联的矩阵的维度不一致</span>
+s5 <span class="token operator">=</span> <span class="token punctuation">[</span>s1 <span class="token punctuation">;</span>s1 <span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="Logical-Operations-and-Assignments"><a href="#Logical-Operations-and-Assignments" class="headerlink" title="Logical Operations and Assignments"></a>Logical Operations and Assignments</h2><pre class="line-numbers language-matlab"><code class="language-matlab">str <span class="token operator">=</span> <span class="token string">'adsfdsf'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%str(3)=</span><span class="token string">'s'</span>
+<span class="token string">'a'</span> <span class="token operator">==</span> str 
+<span class="token comment" spellcheck="true">%output: ans = 1   0   0   0   0   0   0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">str</span><span class="token punctuation">(</span>str <span class="token operator">==</span> <span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">'z'</span>
+<span class="token comment" spellcheck="true">%等同于str(1   0   0   0   0   0   0) = </span><span class="token string">'z'</span>
+<span class="token comment" spellcheck="true">%output: str =</span><span class="token string">'zdsfdsf'</span><span class="token punctuation">;</span> 遂a替换成z
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Exercise:write a script that inverts any given string</p>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><ul>
+<li>A method of storing heterogeneous data</li>
+<li>Structure contain arrays called <em>fields</em></li>
+</ul>
+<p><strong>Student assignment grades:</strong><br>   student<br>      .name -&gt; JohnDoe<br>      .id -&gt; <a href="mailto:id2@sfu.ca" target="_blank" rel="noopener">id2@sfu.ca</a><br>      .number -&gt; 524264<br>      .grade -&gt; 56</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">student<span class="token punctuation">.</span>name  <span class="token operator">=</span> <span class="token string">'JohnDoe'</span><span class="token punctuation">;</span>
+student<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">'id2@sfu'</span><span class="token punctuation">;</span>
+student<span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token number">524264</span><span class="token punctuation">;</span>
+student<span class="token punctuation">.</span>grade <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">75</span><span class="token punctuation">,</span><span class="token number">73</span><span class="token punctuation">;</span><span class="token number">95</span><span class="token punctuation">,</span><span class="token number">91</span><span class="token punctuation">,</span><span class="token number">85.5</span><span class="token punctuation">;</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">72</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+student
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">student</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name  <span class="token operator">=</span> <span class="token string">'Ann Lane'</span><span class="token punctuation">;</span>
+<span class="token function">student</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">'id22@sfu'</span><span class="token punctuation">;</span>
+<span class="token function">student</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token number">5242646</span><span class="token punctuation">;</span>
+<span class="token function">student</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>grade <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">75</span><span class="token punctuation">,</span><span class="token number">73</span><span class="token punctuation">;</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">91</span><span class="token punctuation">,</span><span class="token number">85.5</span><span class="token punctuation">;</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">72</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Exercise:Retrieve the 3rd grade for Ann Lane</p>
+<p>​        <strong>Structure Functions</strong></p>
+<ul>
+<li>rmfield %Remove fields from structure<br>  <code>rmfield(student,&#39;id&#39;)</code></li>
+<li>fieldnames %Field names of structure<br>  <code>fieldnames(student)%回传成string</code></li>
+</ul>
+<p>​       <strong>Nesting Structures</strong></p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token function">struct</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">5</span> <span class="token number">3</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'nest'</span><span class="token punctuation">,</span><span class="token punctuation">...</span>
+    <span class="token function">struct</span><span class="token punctuation">(</span><span class="token string">'testnum'</span><span class="token punctuation">,</span><span class="token string">'Test 1'</span><span class="token punctuation">,</span><span class="token punctuation">...</span>
+    <span class="token string">'xdata'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'ydata'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span> <span class="token number">1</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%一共4个field</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">5</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>nest<span class="token punctuation">.</span>testnum <span class="token operator">=</span> <span class="token string">'Test 2'</span><span class="token punctuation">;</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>nest<span class="token punctuation">.</span>xdata <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span> <span class="token number">5</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>nest<span class="token punctuation">.</span>ydata <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span> <span class="token number">0</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+A<span class="token punctuation">.</span>nest
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Cell-Array"><a href="#Cell-Array" class="headerlink" title="Cell Array"></a>Cell Array</h2><ul>
+<li>Another method of storing heterogeneous data</li>
+<li>Similar to matrix but each entry contains different type of data</li>
+<li>Declared using{}</li>
+</ul>
+<pre class="line-numbers language-matlab"><code class="language-matlab">clear A
+<span class="token comment" spellcheck="true">%像存放不同元素的分块矩阵</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">4</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">5</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">2</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Anne Smith'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token number">7i</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+A
+
+A<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">4</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">5</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">2</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+A<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token string">'Anne Smith'</span><span class="token punctuation">;</span>
+A<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">7i</span><span class="token punctuation">;</span>
+A<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+A
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>How Does Matlab Do It?</p>
+<ul>
+<li>Each entry in a cell array holds a pointer to a data structure</li>
+<li>Defferent cells of the same cell array can point to different types of data structure</li>
+</ul>
+</blockquote>
+<p><strong>Accessing Cell Array</strong></p>
+<ul>
+<li><p>Curly braces,{},are used to access the “content” of cell arrays</p>
+</li>
+<li><p>C = A(1,1)% pointer 指向指针<code>output: ans = [3x3 double]</code></p>
+</li>
+<li><p>C = A{1,1}%访问内容 <code>output: ans = [1 4 3;0 5 8;7 2 9]</code></p>
+</li>
+<li><p>A{1,1}(1,1) %output: ans =  1</p>
+</li>
+</ul>
+<p><strong>Cell Array Functions</strong></p>
+<ul>
+<li><p>cell2mat %Convert cell array to numeric array</p>
+</li>
+<li><p>cell2struct %Convert cell array to structure array</p>
+</li>
+<li><p>num2cell() and mat2cell()<br>  Transform a matrix into a cell variable </p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">  a<span class="token operator">=</span><span class="token function">magic</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%3*3matrix</span>
+  <span class="token comment" spellcheck="true">%output: </span>
+       a <span class="token operator">=</span>
+       <span class="token number">8</span>     <span class="token number">1</span>     <span class="token number">6</span>
+       <span class="token number">3</span>     <span class="token number">5</span>     <span class="token number">7</span>
+       <span class="token number">4</span>     <span class="token number">9</span>     <span class="token number">2</span>
+  b<span class="token operator">=</span><span class="token function">num2cell</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">%output</span>
+      b <span class="token operator">=</span><span class="token number">3</span>×<span class="token number">3</span> cell 数组
+      <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span>    <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>    <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span>
+      <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>    <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>    <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span>
+      <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>    <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span>    <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+  c<span class="token operator">=</span><span class="token function">mat2cell</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%(mtrix,row,col)</span>
+  <span class="token comment" spellcheck="true">%output</span>
+      c <span class="token operator">=</span><span class="token number">3</span>×<span class="token number">1</span> cell 数组
+      <span class="token punctuation">[</span><span class="token number">1</span>×<span class="token number">3</span> double<span class="token punctuation">]</span>
+      <span class="token punctuation">[</span><span class="token number">1</span>×<span class="token number">3</span> double<span class="token punctuation">]</span>
+      <span class="token punctuation">[</span><span class="token number">1</span>×<span class="token number">3</span> double<span class="token punctuation">]</span>
+
+  c<span class="token operator">=</span><span class="token function">mat2cell</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">%a3*3矩阵，row分为2行一组和最后行一组（两行），列分为三合一（一列）</span>
+  <span class="token comment" spellcheck="true">%output:</span>
+      c <span class="token operator">=</span>  <span class="token number">2</span>×<span class="token number">1</span> cell 数组
+      <span class="token punctuation">[</span><span class="token number">2</span>×<span class="token number">3</span> double<span class="token punctuation">]</span>
+      <span class="token punctuation">[</span><span class="token number">1</span>×<span class="token number">3</span> double<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="Multidimensional-Array"><a href="#Multidimensional-Array" class="headerlink" title="Multidimensional Array"></a>Multidimensional Array</h2><ul>
+<li>vector <em> row + column </em> row + column + layer<br>eg.三个维度cell: row(down) column(right) layer(back)</li>
+</ul>
+<p><strong>cat()</strong></p>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%A{1,2,2} = 1 </span>
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token punctuation">;</span><span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>B<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span> <span class="token number">6</span> <span class="token punctuation">;</span> <span class="token number">7</span> <span class="token number">8</span><span class="token punctuation">]</span>
+C <span class="token operator">=</span> <span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%row方向向下（-z轴）</span>
+C <span class="token operator">=</span> <span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%column 方向右（y轴）</span>
+C <span class="token operator">=</span> <span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%layer 向后（-x轴）</span>
+
+clear A B C
+A<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">4</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">5</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">2</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+A<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Anne Smith'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+A<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token number">7i</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+A<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+B<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">4</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">5</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token number">7</span> <span class="token number">2</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+B<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token string">'Anne Smith'</span><span class="token punctuation">;</span>
+B<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">7i</span><span class="token punctuation">;</span>
+B<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+C <span class="token operator">=</span> <span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>reshape()</strong></p>
+<ul>
+<li>Returns a new array with assigned rows and columns<br><code>r1*c1 -&gt; r2*c2</code><br><code>`</code>matlab<br>A{1,1} = [1 4 3;0 5 8;7 2 9];<br>A{1,2} = ‘Anne Smith’;<br>A{2,1} = 3 + 7i;<br>A{2,2} = -pi:pi:pi;<br>C = reshape(A,1,4)</li>
+</ul>
+<p>%output:<br>C =<br>  1×4 cell 数组<br>    [3×3 double]    [3.0000 + 7.0000i]    ‘Anne Smith’    [1×3 double]<br>A =<br>  2×2 cell 数组<br>          [3×3 double]    ‘Anne Smith’<br>    [3.0000 + 7.0000i]    [1×3 double]</p>
+<pre><code>
+**Checking Variables And Variable Status**
+
+* isnan %Detect an element that isnot a number(NaN)
+* isreal %Determine if all array elements are real numbers
+* iscell %Determine if input is cell array
+* ischar %Determine if input is character array
+* islogical ...
+
+# Data access
+存档读取
+## File Access
+- File sys to work Space
+
+| File content |  extension    |   Description   | ImportFunction     |  Export Function    |
+| ------------ | ---- | ---- | ---- | ---- |
+| Matlab formatted  data | MAT | Saved matlab workspace | load | save |
+| Text |      | Space delimited numbers | load | save |
+| Spreadsheet | XLS,XLSX | EXCEL | xlsread | xlswrite |
+
+**save() and load()**
+
+* Save(all) workspace data to a file
+```matlab
+clear; a = magic(4);
+save mydatal.mat %压缩不可编辑阅读
+save mydata2.mat -ascii %可编辑和阅读
+</code></pre><ul>
+<li><p>Load data store in a file:</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">load</span><span class="token punctuation">(</span><span class="token string">'mydatal.mat'</span><span class="token punctuation">)</span>
+<span class="token function">load</span><span class="token punctuation">(</span><span class="token string">'mydata2.mat'</span><span class="token punctuation">,</span><span class="token string">'-ascii'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>Excel File Reading : xlsread()</strong></p>
+</li>
+<li><p>Read from Excel spreadsheet</p>
+<pre class="line-numbers language-matlab"><code class="language-matlab">Score <span class="token operator">=</span> <span class="token function">xlsread</span><span class="token punctuation">(</span><span class="token string">'xxx.xlsx'</span><span class="token punctuation">)</span>
+Score <span class="token operator">=</span> <span class="token function">xlsread</span><span class="token punctuation">(</span><span class="token string">'xxx.xlsx'</span><span class="token punctuation">,</span><span class="token string">'B2:D4'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%excel 的表格位置</span>
+<span class="token comment" spellcheck="true">%两个结果相同</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>Excel File Writing:xlswrite()</strong></p>
+<ul>
+<li>Calculate the means and write into Excel spreadsheet</li>
+</ul>
+<pre class="line-numbers language-matlab"><code class="language-matlab">M <span class="token operator">=</span> <span class="token function">mean</span><span class="token punctuation">(</span>Score<span class="token operator">'</span><span class="token punctuation">)</span><span class="token operator">'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%算平均值</span>
+<span class="token function">xlswrite</span><span class="token punctuation">(</span><span class="token string">'04Score.xlsx'</span><span class="token punctuation">,</span>M<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'E2:E4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">%xlswrite(filename,variable,sheet,location)</span>
+<span class="token function">xlswrite</span><span class="token punctuation">(</span><span class="token string">'04Score.xlsx'</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token string">'Mean'</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'E1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Getting Text in Excel Spreadsheet</strong></p>
+<ul>
+<li>Getting both the text and numbers<br><code>[Score Header]=xlsread(&#39;04Score.xlsx&#39;)</code></li>
+</ul>
+<p><strong>Low-level File Input/Output</strong></p>
+<ul>
+<li>Read and write file at the byte or character level</li>
+<li>A file has an ID fid</li>
+<li>Location in the file is specified by a pointer that can be moved around</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Decription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fopen</td>
+<td>Open file,or obtain info about open files</td>
+</tr>
+<tr>
+<td>fclose</td>
+<td>close one or all open files</td>
+</tr>
+<tr>
+<td>fscanf</td>
+<td>read data from text file</td>
+</tr>
+<tr>
+<td>fprintf</td>
+<td>write data to text file</td>
+</tr>
+<tr>
+<td>feof</td>
+<td>Test for end-of-file</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Open and close a file:<br><code>fid = fopen(&#39;[filename]&#39;, &#39;[permission]&#39;)</code></li>
+<li>permission : r r+ w w+ a a+<br><code>status = fclose(fid);</code></li>
+</ul>
+<ol>
+<li>Generate x ,y</li>
+<li>Open a file</li>
+<li>write x,y into file</li>
+<li>Close the file</li>
+</ol>
+<pre class="line-numbers language-matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> y<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> fid<span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">'sinx.txt'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token number">i</span><span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">11</span>
+    <span class="token function">fprintf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%5.3f %8.4f\n'</span><span class="token punctuation">,</span><span class="token function">x</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">y</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%总共数值是5个，有三个小数</span>
+<span class="token keyword">end</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span><span class="token punctuation">;</span> type sinx<span class="token punctuation">.</span>txt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Read and write through Formatted I/O</strong></p>
+<ul>
+<li><p>Read:<code>A = fscanf(fid,format,size);</code></p>
+<ul>
+<li>Data read = Format specifier[format] Amount of data to read[size]</li>
+</ul>
+</li>
+<li><p>Write:<code>fprintf(fid,format,x,y...)</code></p>
+</li>
+<li><p>Format specifier: %-12.5e</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>SPECIFIER</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%c</td>
+<td>Single character</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>Decimal notation</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>Exponential notation</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>Fixed-point notation</td>
+</tr>
+<tr>
+<td>%g</td>
+<td>The more compact of %o or%f</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>Octal notation (unsigned)</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>String of characters</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>Decimal notation(unsigned)</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>Hexadecimal notation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reading from Files</strong></p>
+<ul>
+<li>Check if it is the end of file: <code>feof(fid)</code><pre class="line-numbers language-matlab"><code class="language-matlab">fid <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">'asciiData.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token operator">~</span><span class="token function">feof</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span>
+  <span class="token function">name</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%5c'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">year</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%d'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">no1</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%d'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">no2</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%d'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">no3</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%g'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">no4</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token string">'%g\n'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token number">i</span><span class="token operator">+</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h1 id="Basic-plotting"><a href="#Basic-plotting" class="headerlink" title="Basic plotting"></a>Basic plotting</h1><p><strong>Basics</strong></p>
+<ul>
+<li>Matlab has a powerful plotting enfine that can generate a wide variety of plots</li>
+</ul>
+<p><strong>Plot from Data</strong></p>
+<ul>
+<li>Matlab does not understand functions<br><code>f(t) = sin(2pit)</code></li>
+<li>Strategies<ol>
+<li>Generate the numeric values of a function over a spectfic range</li>
+<li>Display the data “points” in a graphical way</li>
+</ol>
+</li>
+</ul>
+<h2 id="plot"><a href="#plot" class="headerlink" title="plot()"></a>plot()</h2><ul>
+<li>plot(x,y) plots each vector pairs(x,y)</li>
+<li>plot(y) plots each vector pairs(x,y),where x=[1…n],n=length(y)</li>
+<li>Example: <ul>
+<li><code>plot(cos(0:pi/20:2*pi))</code></li>
+<li><code>plot(cos(0:pi/20:2*pi))</code><br><code>plot(sin(0:pi/20:2*pi))</code>%会刷新，把之前的图刷新掉</li>
+</ul>
+</li>
+<li><p><strong>hold on/off</strong></p>
+<ul>
+<li>Use hold on to have both plots in one figure<pre class="line-numbers language-matlab"><code class="language-matlab">hold on
+<span class="token function">plot</span><span class="token punctuation">(</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">20</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">20</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+hold off
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Plot Style</strong></p>
+<ul>
+<li>plot(x,y,’str’) plots each vector pairs(x,y) using the format defined in <code>str</code> (check linespec)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>DATA MARKERS</th>
+<th>LINETYPES</th>
+<th>COLORS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dot .</td>
+<td>solid line -</td>
+<td>Black k</td>
+</tr>
+<tr>
+<td>Asterisk *</td>
+<td>Dashed line –</td>
+<td>Blue b</td>
+</tr>
+<tr>
+<td>cross X</td>
+<td>Dash-dotted line -.</td>
+<td>Cyan c</td>
+</tr>
+<tr>
+<td>circle o</td>
+<td>Dotted line :</td>
+<td>Green g</td>
+</tr>
+<tr>
+<td>plus sign +</td>
+<td></td>
+<td>Magenta m</td>
+</tr>
+<tr>
+<td>square s</td>
+<td></td>
+<td>Red r</td>
+</tr>
+<tr>
+<td>diamond d</td>
+<td></td>
+<td>White w</td>
+</tr>
+<tr>
+<td>Five-pointed star p</td>
+<td></td>
+<td>Yellow y</td>
+</tr>
+<tr>
+<td>Traangle(down) v</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Triangle(up) ^</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Triangle(left)&lt;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Triangle(right) &gt;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hexagram  H</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code>```matlab
+</code></pre><p>  hold on<br>  plot(cos(0:pi/20:2<em>pi),’or–’);<br>  plot(sin(0:pi/20:2</em>pi),’xg:’)<br>  hold off</p>
+<pre><code>```
+</code></pre><p><strong>legend()</strong></p>
+<ul>
+<li>Add legend to graphical<br><code>legend(&#39;L1&#39;,...)</code></li>
+<li>Plsition adjustment<pre class="line-numbers language-matlab"><code class="language-matlab">x<span class="token operator">=</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">0.5</span><span class="token operator">:</span><span class="token number">4</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+y<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> h <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>w<span class="token operator">=</span><span class="token number">1</span><span class="token operator">./</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span><span class="token function">exp</span><span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+g<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">^</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">.*</span><span class="token function">exp</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">.*</span><span class="token punctuation">(</span>x<span class="token number">-2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">)</span><span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">./</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'bd-'</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>h<span class="token punctuation">,</span><span class="token string">'gp:'</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>w<span class="token punctuation">,</span><span class="token string">'ro-'</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>g<span class="token punctuation">,</span><span class="token string">'c^-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin(x)'</span><span class="token punctuation">,</span><span class="token string">'cos(x)'</span><span class="token punctuation">,</span><span class="token string">'Sigmoid'</span><span class="token punctuation">,</span><span class="token string">'Gauss function'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>title() and ?label()</strong></p>
+<ul>
+<li>title()      xlabel()       ylabel()       zlabel()<pre class="line-numbers language-matlab"><code class="language-matlab">x<span class="token operator">=</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span>y1<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>y2<span class="token operator">=</span><span class="token function">exp</span><span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y1<span class="token punctuation">,</span><span class="token string">'--*'</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>y2<span class="token punctuation">,</span><span class="token string">':o'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'t=0 to 2\pi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'values of sin(t) and e^{x}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin(t)'</span><span class="token punctuation">,</span><span class="token string">'e^{x}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Function Plots of sin(t) and e^{x}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>text() and annotation</strong></p>
+<ul>
+<li>Text with mathematical expression using LaTex<br><code>`</code>matlab<br>x = linspace(0,3); y=x.^2.<em>sin(x); plot(x,y);<br>line([2,2],[0,2^2</em>sin(2)]);<br>str = ‘$$ \int_{0}^{2} x^2\sin(x) dx $$’;%\int为积分<br>text(0.25,2.5,str,’Interpreter’,’latex’);<br>%0.25,2.5为位置，str为显示字符串，后面为固定格式latex显示</li>
+</ul>
+<p>annotation(‘arrow’,’X’,[0.32,0.5],’Y’,[0.6,0.4]);<br>%（箭头，从某点到某点）</p>
+<pre><code>
+**Figure Adjustment**
+* Several properties
+  * Font
+  * Font size
+  * Line width
+  * Axis limit
+  * Tick position
+  * Tick label
+
+**Graphical Object**
+* A fig is composed of many objects
+Figure object         Axes object            Line object
+* Edit-&gt;Figure properties-&gt;more properties
+
+**Modifying Properties of An object**
+* Strategy
+  1. Identify the &quot;handle&quot; of an object
+    * Upon creation:
+        `h = plot(x,y);`
+
+| Function | Purpose                                   |
+| -------- | ----------------------------------------- |
+| gca      | Return the handle of the &quot;current&quot; axes   |
+| gcf      | Return the handle of the &quot;current&quot; figure |
+| allchild | Find all children of specified objects    |
+| ancestor | Find ancestor of graphics object          |
+| delete   | Delete an object                          |
+| findall  | Find all graphics objects                 |
+
+  2. Fetch or modify the object&#39;s properties
+
+    * To fech properties ,use `get()`
+    ```matlab
+    x = linspace(0,2*pi,1000);
+    y = sin(x); plot(x,y);
+    h = plot(x,y); get(h)
+</code></pre><pre><code>```matlab
+get(gca) %handle of axes
+```
+* To modify properties use `set()`
+</code></pre><ul>
+<li><p>For example ,to change the lim of the x-axis</p>
+<ol>
+<li>Find the handle of the x-axis</li>
+<li>Modify the limits<br><code>`</code>matlab<br>set(gca,’XLim’,[0,2*pi]);<br>set(gca,’YLim’,[-1.2,1.2]);<br>%xlim([1,20])</li>
+</ol>
+<p>set(gca, ‘FontSize’,20);<br>set(gca,’XTick’,0:pi/2:2*pi);<br>set(gca,’XTickLabel’,0:90:360);%坐标可自设</p>
+<p>set(gca, ‘FontName’,’symbol’);<br>set(gca,’XTickLabel’{‘0’,’p/2’,’p’,’3p/2’,’2p’});<br><code>`</code><br><strong>Line Specification</strong></p>
+<ul>
+<li>Line style and width<br><code>set(h,&#39;LineStyle&#39;,&#39;-.&#39;LineWidth&#39;,7.0,&#39;Color,&#39;g&#39;)</code><br>Alternative <code>plot(x,y,&#39;-.g&#39;,&#39;LineWidth&#39;,7.0)</code></li>
+<li>Face and edge colors of the marker<br><code>plot(x,&#39;-md&#39;,&#39;LineWith&#39;,2,&#39;MarkerEdgeColor&#39;,&#39;k&#39;,&#39;MarkerFaceColor&#39;,&#39;g&#39;,&#39;MarkerSize&#39;,10);</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Multiple-Figures"><a href="#Multiple-Figures" class="headerlink" title="Multiple Figures"></a>Multiple Figures</h2><ul>
+<li>Create a figure window by calling figure<pre class="line-numbers language-matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">10</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">;</span>
+y1 <span class="token operator">=</span> x<span class="token operator">.^</span><span class="token number">2</span> <span class="token operator">-</span> <span class="token number">8</span><span class="token punctuation">;</span>
+y2 <span class="token operator">=</span> <span class="token function">exp</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+figure<span class="token punctuation">,</span><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+figure<span class="token punctuation">,</span><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Be careful when using the <em>gcf</em> handle where thre exists multple fig<ul>
+<li>Figure Position and Size<br><code>figure(&#39;Position&#39;,[left,bottom,width,height])</code></li>
+</ul>
+</li>
+<li>Several Plots in One Figure<br><code>subplot(m,n,1);</code><pre class="line-numbers language-matlab"><code class="language-matlab">t <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span> x <span class="token operator">=</span> <span class="token number">3</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>y<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> axis normal
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> axis square <span class="token comment" spellcheck="true">%x total = y total</span>
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> axis equal <span class="token comment" spellcheck="true">%xunit和yunit一格大小同</span>
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> axis equal tight <span class="token comment" spellcheck="true">%Tight</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+| <strong>Control of Grid,box,and axis</strong> |                  |<br>| ——————————– | —————- |<br>| grid on/off                      | axis equal       |<br>| axis on/off                      | axis equal tight |<br>| axis normal                      | axis image       |<br>| axis square                      | azis ij     /xy  |</li>
+</ul>
+<h2 id="Saving-Figures-into-Files"><a href="#Saving-Figures-into-Files" class="headerlink" title="Saving Figures into Files"></a>Saving Figures into Files</h2><pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token function">saveas</span><span class="token punctuation">(</span>gcf<span class="token punctuation">,</span><span class="token string">'&lt;filename>'</span><span class="token punctuation">,</span><span class="token string">'&lt;formattype>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>Bitmap Image Format<ul>
+<li>jpeg     24-bit</li>
+<li>png        24-bit</li>
+<li>tiff     24-bit</li>
+<li>bmpmono    BMP Monochrome</li>
+<li>bmp</li>
+<li>bmp256    8-bit(256color,uses a fixed colormap)</li>
+</ul>
+</li>
+<li>Vector Graphics Format  √<ul>
+<li>pdf</li>
+<li>meta</li>
+<li>eps</li>
+<li>epsc</li>
+<li>svg</li>
+<li>ps</li>
+<li>psc</li>
+</ul>
+</li>
+</ul>
+<h1 id="Advanced-2D-plots"><a href="#Advanced-2D-plots" class="headerlink" title="Advanced 2D plots"></a>Advanced 2D plots</h1><ul>
+<li>What would you like to show?<ul>
+<li>Comparison</li>
+<li>Relationship</li>
+<li>Composition</li>
+<li>Distribution</li>
+</ul>
+</li>
+</ul>
+<h2 id="Logarithm-Plots"><a href="#Logarithm-Plots" class="headerlink" title="Logarithm Plots"></a>Logarithm Plots</h2><pre class="line-numbers language-matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">logspace</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">%x=10^(-1) ... 10^1[一共100个]</span>
+y <span class="token operator">=</span> x<span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'plot'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+# Color space
+
+
+# 3D plots
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        share
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/17/Matlab-note/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/03/17/Python-note/" class="article-nav-link">
+        <strong class="article-nav-caption">prev</strong>
+        <div class="article-nav-title">
+          
+            Python Note
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/11/14/Hexo blog construction record/" class="article-nav-link">
+        <strong class="article-nav-caption">next</strong>
+        <div class="article-nav-title">Hexo blog construction record</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "RtpkUwFtXvmt82QeX80OhMh8-gzGzoHsz",
+    app_key: "4ibEQkn78BGa03zP9zX7K50s",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2018-2020
+        <i class="ri-heart-fill heart_icon"></i> Quincy
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1279380206&amp;web_id=1279380206'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="MercaPH"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我吃串串呗~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<!-- Tocbot -->
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+<script src="/dist/main.js"></script>
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+<link rel="stylesheet" href="/css/clipboard.css">
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+<script src="/js/dz.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>
