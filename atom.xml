@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-07T19:08:05.000Z</updated>
+  <updated>2021-01-19T18:50:52.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recipe</title>
+    <link href="http://yoursite.com/2021/01/19/Recipe/"/>
+    <id>http://yoursite.com/2021/01/19/Recipe/</id>
+    <published>2021-01-19T18:50:52.000Z</published>
+    <updated>2021-01-19T18:50:52.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天吃了吗？&lt;br&gt;</summary>
+    
+    
+    
+    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
+    
+    <category term="Log" scheme="http://yoursite.com/categories/Local-logging/Log/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Change WeChat ringtone</title>
+    <link href="http://yoursite.com/2021/01/18/WechatNotificationPC/"/>
+    <id>http://yoursite.com/2021/01/18/WechatNotificationPC/</id>
+    <published>2021-01-18T22:29:57.000Z</published>
+    <updated>2021-01-18T22:29:57.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Change the PC version of WeChat ringtone.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Jotting-0x835</title>
@@ -139,7 +175,7 @@
     <link href="http://yoursite.com/2020/11/19/ZEMAX-notes/"/>
     <id>http://yoursite.com/2020/11/19/ZEMAX-notes/</id>
     <published>2020-11-19T11:50:13.000Z</published>
-    <updated>2020-11-19T11:50:13.000Z</updated>
+    <updated>2021-01-18T22:26:41.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;ZEMAX RAY-TRACING EXECRISE NOTES FROM OPTICAL CONSTRUCTION COURSE</summary>
@@ -349,42 +385,6 @@
     
     <category term="Log" scheme="http://yoursite.com/categories/Local-logging/Log/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>_0x7DA1625</title>
-    <link href="http://yoursite.com/2020/10/16/Umn/"/>
-    <id>http://yoursite.com/2020/10/16/Umn/</id>
-    <published>2020-10-16T10:54:39.000Z</published>
-    <updated>2018-10-16T10:54:39.000Z</updated>
-    
-    
-    <summary type="html">This article is encrypted.</summary>
-    
-    
-    
-    <category term="Jottings" scheme="http://yoursite.com/categories/Jottings/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Umeå 留学攻略</title>
-    <link href="http://yoursite.com/2020/10/16/Guide-to-Studying-in-umea-U/"/>
-    <id>http://yoursite.com/2020/10/16/Guide-to-Studying-in-umea-U/</id>
-    <published>2020-10-16T08:21:36.000Z</published>
-    <updated>2020-10-16T08:21:36.000Z</updated>
-    
-    
-    <summary type="html">迁移PDF，代代相传的于村指南~</summary>
-    
-    
-    
-    <category term="Guide" scheme="http://yoursite.com/categories/Guide/"/>
-    
-    
-    <category term="Umeå" scheme="http://yoursite.com/tags/Umea/"/>
     
   </entry>
   
