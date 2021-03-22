@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-19T18:50:52.000Z</updated>
+  <updated>2021-03-22T08:48:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lab Tools</title>
+    <link href="http://yoursite.com/2021/03/22/Lab-Tools/"/>
+    <id>http://yoursite.com/2021/03/22/Lab-Tools/</id>
+    <published>2021-03-22T08:48:30.000Z</published>
+    <updated>2021-03-22T08:48:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Some useful tools’ name</summary>
+    
+    
+    
+    <category term="Operating record" scheme="http://yoursite.com/categories/Operating-record/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Illustrator Note</title>
+    <link href="http://yoursite.com/2021/03/22/Illustrator-Note/"/>
+    <id>http://yoursite.com/2021/03/22/Illustrator-Note/</id>
+    <published>2021-03-22T08:40:05.000Z</published>
+    <updated>2021-03-22T08:40:05.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Illustrator some useful tools</summary>
+    
+    
+    
+    <category term="Design" scheme="http://yoursite.com/categories/Design/"/>
+    
+    <category term="Graphic" scheme="http://yoursite.com/categories/Design/Graphic/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Recipe</title>
@@ -348,42 +384,6 @@
     
     
     <category term="operating record" scheme="http://yoursite.com/categories/operating-record/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>开启或关闭Chrome的通知</title>
-    <link href="http://yoursite.com/2020/10/24/Chromenotificationsonoroff/"/>
-    <id>http://yoursite.com/2020/10/24/Chromenotificationsonoroff/</id>
-    <published>2020-10-24T20:38:37.000Z</published>
-    <updated>2020-10-24T20:38:37.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Annoying! 😡 最近总是有Google chrome 的通知弹出，叮咚叮咚的，有手就行，搞它~</summary>
-    
-    
-    
-    <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LLog_storage</title>
-    <link href="http://yoursite.com/2020/10/23/LLog_storage/"/>
-    <id>http://yoursite.com/2020/10/23/LLog_storage/</id>
-    <published>2020-10-23T06:28:27.000Z</published>
-    <updated>2020-10-23T06:28:27.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Storage</summary>
-    
-    
-    
-    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
-    
-    <category term="Log" scheme="http://yoursite.com/categories/Local-logging/Log/"/>
     
     
   </entry>

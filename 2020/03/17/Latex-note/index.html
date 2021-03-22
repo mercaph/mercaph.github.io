@@ -64,7 +64,7 @@
 	</a>
  
 	<a href="/2020/03/17/Latex-note/" class="article-date">
-	  Updated <time datetime="2020-03-17T19:46:31.000Z" itemprop="dateUpdated">2020-03-17</time>
+	  Updated <time datetime="2021-03-22T09:05:21.000Z" itemprop="dateUpdated">2021-03-22</time>
 	</a>
 
   <div class="article-category">
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.4k</span>
+            <span class="post-count">2.9k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">11 min</span>
+            <span class="post-count">13 min</span>
         </span>
     </span>
 </div>
@@ -306,8 +306,31 @@
     <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=0.2<span class="token function selector">\textwidth</span><span class="token punctuation">]</span><span class="token punctuation">{</span>VSquick.jpg<span class="token punctuation">}</span>
 
 
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>hbt!<span class="token punctuation">]</span><span class="token comment" spellcheck="true">%hbt强制放在页面中间 </span>
+    <span class="token comment" spellcheck="true">%{figure*}跨栏的浮动体只能出现在下一页</span>
+        <span class="token function selector">\centering</span>
+        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=0.8<span class="token function selector">\linewidth</span><span class="token punctuation">]</span><span class="token punctuation">{</span>1.jpg<span class="token punctuation">}</span><span class="token comment" spellcheck="true">%\linewidth行宽的</span>
+        <span class="token comment" spellcheck="true">%\includegraphics[width=0.8\textwidth]{1.jpg}%\textwidth版面的</span>
+        <span class="token comment" spellcheck="true">%\includegraphics[width=10cm]{1.jpg}</span>
+        <span class="token function selector">\caption</span><span class="token punctuation">{</span>for example, that of the tunnel diode<span class="token punctuation">}</span>
+        <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">fig:my_label</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%用来交叉引用</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
+    See the Figure <span class="token function selector">\ref</span><span class="token punctuation">{</span><span class="token keyword">fig:my_label</span><span class="token punctuation">}</span>
+
+   <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>hbt!<span class="token punctuation">]</span>
+        <span class="token function selector">\centering</span>
+        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=1<span class="token function selector">\linewidth</span><span class="token punctuation">]</span><span class="token punctuation">{</span>res/fcc1.jpg<span class="token punctuation">}</span><span class="token comment" spellcheck="true">%\linewidth行宽的</span>
+        <span class="token comment" spellcheck="true">%\includegraphics[width=0.8\textwidth]{1.jpg}%\textwidth版面的</span>
+        <span class="token comment" spellcheck="true">%\includegraphics[width=10cm]{1.jpg}</span>
+        <span class="token function selector">\caption</span><span class="token punctuation">{</span>Total energy vs lattice constant for Face centered Cubic (fcc) Copper<span class="token punctuation">}</span>
+        <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">fig:fcc</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%用来交叉引用</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure
+
+
+
+\end{document</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="表格浮动体"><a href="#表格浮动体" class="headerlink" title="表格浮动体"></a>表格浮动体</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
 <span class="token comment" spellcheck="true">%语法 \includegraphics{}</span>
 <span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
@@ -362,6 +385,21 @@
             <span class="token function selector">\caption</span><span class="token punctuation">{</span><span class="token function selector">\LaTeX</span> 系统3<span class="token punctuation">}</span><span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">fig-lion3</span><span class="token punctuation">}</span>
     <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
 
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">table</span><span class="token punctuation">}</span><span class="token punctuation">[</span>hbt!<span class="token punctuation">]</span>
+        <span class="token function selector">\centering</span>
+        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span><span class="token punctuation">{</span> c  c  l  r <span class="token punctuation">}</span><span class="token comment" spellcheck="true">%三线表</span>
+        <span class="token function selector">\toprule</span>
+            dfkl <span class="token punctuation">&amp;</span> sdfsd <span class="token punctuation">&amp;</span> fdf <span class="token punctuation">&amp;</span> happy<span class="token function selector">\\</span><span class="token comment" spellcheck="true">%表格下一行/不能自动换行</span>
+        <span class="token function selector">\midrule</span>
+            sdfds <span class="token punctuation">&amp;</span> sdfds <span class="token punctuation">&amp;</span> dfsf <span class="token punctuation">&amp;</span> fdsf<span class="token function selector">\\</span>
+        <span class="token function selector">\bottomrule</span>
+        <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span>
+        <span class="token function selector">\caption</span><span class="token punctuation">{</span>second table<span class="token punctuation">}</span>
+        <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">tab:first</span><span class="token punctuation">}</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">table</span><span class="token punctuation">}</span>
+
+
 <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">%浮动体</span>
 <span class="token comment" spellcheck="true">%实现灵活分页</span>
@@ -377,7 +415,7 @@
     <span class="token comment" spellcheck="true">% 并排与子图表（subcaption，subfig，floatrow等宏包）</span>
     <span class="token comment" spellcheck="true">% 绕排（picinpar，wrapfig等宏包）</span>
 <span class="token comment" spellcheck="true">% \end{figure}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><pre class="line-numbers language-latex"><code class="language-latex"><span class="token comment" spellcheck="true">%导言区//全局设置</span>
 <span class="token comment" spellcheck="true">%\documentclass{article}%ctexbook,ctexreport,book,report,letter</span>
 <span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexbook</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%normal szie,ctexbook,ctexreport,book,report,letter</span>
@@ -618,8 +656,54 @@
         <span class="token equation-command regex">\end</span>{cases}
     </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span>
 
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span><span class="token equation string">
+    <span class="token equation-command regex">\alpha</span> = <span class="token equation-command regex">\lambda</span> + <span class="token equation-command regex">\omega</span>_{s}
+    <span class="token equation-command regex">\label</span>{eq:alpha}
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">equation</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">align</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">%不能有空行</span>
+         a <span class="token punctuation">&amp;</span>= b^2 + <span class="token function selector">\frac</span><span class="token punctuation">{</span>n<span class="token punctuation">}</span><span class="token punctuation">{</span>3<span class="token punctuation">}</span> <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">eq:4</span><span class="token punctuation">}</span><span class="token function selector">\\</span>
+          x <span class="token punctuation">&amp;</span>= <span class="token function selector">\sqrt</span><span class="token punctuation">{</span>n^3<span class="token punctuation">}</span>
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">align</span><span class="token punctuation">}</span>
+
+    <span class="token function selector">\lstset</span><span class="token punctuation">{</span>language=C<span class="token punctuation">}</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">lstlisting</span><span class="token punctuation">}</span><span class="token cdata">
+    #include &lt;iostream>
+    using namespace std;
+
+    int main()
+    {
+        cout&lt;&lt;"hello"&lt;&lt;endl;
+        return 0;
+    }
+    </span><span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">lstlisting</span><span class="token punctuation">}</span>
+
+
+    参考文献
+    <span class="token function selector">\cite</span><span class="token punctuation">{</span><span class="token keyword">这里面填引用文献的Bibtexkey</span><span class="token punctuation">}</span> 
+        <span class="token comment" spellcheck="true">% 一般打完括号编译器就会弹出所有参考文献的key值</span>
+
+         <span class="token function selector">\nocite</span><span class="token punctuation">{</span>Bibtexkey<span class="token punctuation">}</span>
+         <span class="token comment" spellcheck="true">% 文中未出现引用标记，但依然需要在参考文献中打印该文献时使用</span>
+
+         <span class="token function selector">\bibliographystyle</span><span class="token punctuation">{</span>plain<span class="token punctuation">}</span>
+         <span class="token comment" spellcheck="true">% 设置文献参考样式，LaTex中参考文献标准样式有八种，具体信息参见下面</span>
+
+         <span class="token function selector">\bibliography</span><span class="token punctuation">{</span>这里天BibTex的文件名<span class="token punctuation">}</span>
+         <span class="token comment" spellcheck="true">% 选择调用的BibTex文件，bibfile为文件名；该语句放在文中的哪个位置，pdf中参考文献部分也将出现在相应位置</span>
+
+
+        plain：按字母的顺序排列，比较次序为作者、年度和标题；
+        unsrt：样式同plain，只是按照引用的先后排序；
+        alpha：用作者名首字母+年份后两位作标号，以字母顺序排序；
+        abbrv：类似plain，将月份全拼改为缩写，更显紧凑；
+        ieeetr：国际电气电子工程师协会期刊样式；
+        acm：美国计算机学会期刊样式；
+        siam：美国工业和应用数学学会期刊样式；
+        palike:美国心理学学会期刊样式
+
 <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
  
       <!-- reward -->
       
