@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-06-06T15:10:25.000Z</updated>
+  <updated>2021-06-16T03:45:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何阅读一本书 Note</title>
+    <link href="http://yoursite.com/2021/06/16/howtoreadabook/"/>
+    <id>http://yoursite.com/2021/06/16/howtoreadabook/</id>
+    <published>2021-06-16T03:45:53.000Z</published>
+    <updated>2021-06-16T03:45:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;How to read a book - NOTE&lt;br&gt;</summary>
+    
+    
+    
+    <category term="learning notes" scheme="http://yoursite.com/categories/learning-notes/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Jotting-0x446</title>
     <link href="http://yoursite.com/2021/06/06/Jotting-0x446/"/>
     <id>http://yoursite.com/2021/06/06/Jotting-0x446/</id>
     <published>2021-06-06T15:10:25.000Z</published>
-    <updated>2021-06-06T15:10:25.000Z</updated>
+    <updated>2021-06-07T15:10:25.000Z</updated>
     
     
     <summary type="html">This article is encrypted.</summary>
@@ -37,8 +54,8 @@
     <title>Lab Tools</title>
     <link href="http://yoursite.com/2021/03/22/Lab-Tools/"/>
     <id>http://yoursite.com/2021/03/22/Lab-Tools/</id>
-    <published>2021-03-22T08:48:30.000Z</published>
-    <updated>2021-03-22T08:48:30.000Z</updated>
+    <published>2021-03-22T01:48:30.000Z</published>
+    <updated>2021-03-22T01:48:30.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Some useful tools’ name</summary>
@@ -54,8 +71,8 @@
     <title>Illustrator Note</title>
     <link href="http://yoursite.com/2021/03/22/Illustrator-Note/"/>
     <id>http://yoursite.com/2021/03/22/Illustrator-Note/</id>
-    <published>2021-03-22T08:40:05.000Z</published>
-    <updated>2021-03-22T08:40:05.000Z</updated>
+    <published>2021-03-22T01:40:05.000Z</published>
+    <updated>2021-03-22T01:40:05.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Illustrator some useful tools</summary>
@@ -71,10 +88,10 @@
   
   <entry>
     <title>Recipe</title>
-    <link href="http://yoursite.com/2021/01/20/Recipe/"/>
-    <id>http://yoursite.com/2021/01/20/Recipe/</id>
-    <published>2021-01-19T18:50:52.000Z</published>
-    <updated>2021-01-19T18:50:52.000Z</updated>
+    <link href="http://yoursite.com/2021/01/19/Recipe/"/>
+    <id>http://yoursite.com/2021/01/19/Recipe/</id>
+    <published>2021-01-19T11:50:52.000Z</published>
+    <updated>2021-01-19T11:50:52.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天吃了吗？&lt;br&gt;</summary>
@@ -90,10 +107,10 @@
   
   <entry>
     <title>Change WeChat ringtone</title>
-    <link href="http://yoursite.com/2021/01/19/WechatNotificationPC/"/>
-    <id>http://yoursite.com/2021/01/19/WechatNotificationPC/</id>
-    <published>2021-01-18T22:29:57.000Z</published>
-    <updated>2021-01-18T22:29:57.000Z</updated>
+    <link href="http://yoursite.com/2021/01/18/WechatNotificationPC/"/>
+    <id>http://yoursite.com/2021/01/18/WechatNotificationPC/</id>
+    <published>2021-01-18T15:29:57.000Z</published>
+    <updated>2021-01-18T15:29:57.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Change the PC version of WeChat ringtone.&lt;br&gt;</summary>
@@ -107,10 +124,10 @@
   
   <entry>
     <title>Jotting-0x835</title>
-    <link href="http://yoursite.com/2021/01/08/Jotting-0x835/"/>
-    <id>http://yoursite.com/2021/01/08/Jotting-0x835/</id>
-    <published>2021-01-07T19:08:05.000Z</published>
-    <updated>2021-01-07T19:08:05.000Z</updated>
+    <link href="http://yoursite.com/2021/01/07/Jotting-0x835/"/>
+    <id>http://yoursite.com/2021/01/07/Jotting-0x835/</id>
+    <published>2021-01-07T12:08:05.000Z</published>
+    <updated>2021-01-07T12:08:05.000Z</updated>
     
     
     <summary type="html">This article is encrypted.</summary>
@@ -126,8 +143,8 @@
     <title>Jotting_0x7DC</title>
     <link href="http://yoursite.com/2020/12/19/Jotting-0x7DC/"/>
     <id>http://yoursite.com/2020/12/19/Jotting-0x7DC/</id>
-    <published>2020-12-19T09:39:46.000Z</published>
-    <updated>2020-12-19T09:39:46.000Z</updated>
+    <published>2020-12-19T02:39:46.000Z</published>
+    <updated>2020-12-19T02:39:46.000Z</updated>
     
     
     <summary type="html">This article is encrypted.</summary>
@@ -143,8 +160,8 @@
     <title>SumatraPDF opens multiple windows</title>
     <link href="http://yoursite.com/2020/11/25/SumatraPDF-opens-multiple-windows/"/>
     <id>http://yoursite.com/2020/11/25/SumatraPDF-opens-multiple-windows/</id>
-    <published>2020-11-25T14:40:04.000Z</published>
-    <updated>2020-11-25T14:40:04.000Z</updated>
+    <published>2020-11-25T07:40:04.000Z</published>
+    <updated>2020-11-25T07:40:04.000Z</updated>
     
     
       
@@ -166,8 +183,8 @@
     <title>VScode Automatically wrap according to screen width</title>
     <link href="http://yoursite.com/2020/11/25/VScode-Automatically-wrap-according-to-screen-width/"/>
     <id>http://yoursite.com/2020/11/25/VScode-Automatically-wrap-according-to-screen-width/</id>
-    <published>2020-11-25T13:31:13.000Z</published>
-    <updated>2020-11-25T13:31:13.000Z</updated>
+    <published>2020-11-25T06:31:13.000Z</published>
+    <updated>2020-11-25T06:31:13.000Z</updated>
     
     
       
@@ -191,8 +208,8 @@
     <title>Common software log</title>
     <link href="http://yoursite.com/2020/11/25/Common-software-log/"/>
     <id>http://yoursite.com/2020/11/25/Common-software-log/</id>
-    <published>2020-11-25T13:29:30.000Z</published>
-    <updated>2020-11-25T13:29:30.000Z</updated>
+    <published>2020-11-25T06:29:30.000Z</published>
+    <updated>2020-11-25T06:29:30.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Commonly use~&lt;br&gt;</summary>
@@ -210,8 +227,8 @@
     <title>Reinstall Record_20201121</title>
     <link href="http://yoursite.com/2020/11/25/Reinstall-Record-20201121/"/>
     <id>http://yoursite.com/2020/11/25/Reinstall-Record-20201121/</id>
-    <published>2020-11-25T13:23:11.000Z</published>
-    <updated>2020-11-25T13:23:11.000Z</updated>
+    <published>2020-11-25T06:23:11.000Z</published>
+    <updated>2020-11-25T06:23:11.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Friends, make backups of important files🤣&lt;br&gt;</summary>
@@ -227,8 +244,8 @@
     <title>ZEMAX Notes</title>
     <link href="http://yoursite.com/2020/11/19/ZEMAX-notes/"/>
     <id>http://yoursite.com/2020/11/19/ZEMAX-notes/</id>
-    <published>2020-11-19T11:50:13.000Z</published>
-    <updated>2021-01-18T22:26:41.000Z</updated>
+    <published>2020-11-19T04:50:13.000Z</published>
+    <updated>2021-01-18T15:26:41.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;ZEMAX RAY-TRACING EXECRISE NOTES FROM OPTICAL CONSTRUCTION COURSE</summary>
@@ -244,8 +261,8 @@
     <title>Jotting_0x7DB</title>
     <link href="http://yoursite.com/2020/11/02/Jotting-0x7DB/"/>
     <id>http://yoursite.com/2020/11/02/Jotting-0x7DB/</id>
-    <published>2020-11-02T05:17:56.000Z</published>
-    <updated>2018-04-10T04:17:56.000Z</updated>
+    <published>2020-11-01T22:17:56.000Z</published>
+    <updated>2018-04-09T22:17:56.000Z</updated>
     
     
     <summary type="html">This article is encrypted.</summary>
@@ -261,8 +278,8 @@
     <title>AE Notes</title>
     <link href="http://yoursite.com/2020/10/29/AE-notes/"/>
     <id>http://yoursite.com/2020/10/29/AE-notes/</id>
-    <published>2020-10-29T09:53:40.000Z</published>
-    <updated>2020-10-29T09:53:40.000Z</updated>
+    <published>2020-10-29T02:53:40.000Z</published>
+    <updated>2020-10-29T02:53:40.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;把17年写的星月兮的记录迁移一下~</summary>
@@ -280,8 +297,8 @@
     <title>Pr Notes</title>
     <link href="http://yoursite.com/2020/10/29/PR-notes/"/>
     <id>http://yoursite.com/2020/10/29/PR-notes/</id>
-    <published>2020-10-29T09:53:28.000Z</published>
-    <updated>2020-10-29T09:53:28.000Z</updated>
+    <published>2020-10-29T02:53:28.000Z</published>
+    <updated>2020-10-29T02:53:28.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在宣传部的日子天天和Adobe全家桶打交道，乙方日子过久了，熬夜剪视频写脚本做海报的日子习惯了，奇怪的要求也听多了，这两年退休的日子没被虐还不习惯doge0&lt;br&gt;怕给忘了，把看星月兮的记录迁移一下~</summary>
@@ -299,8 +316,8 @@
     <title>工科生的瞎涂系列0x01</title>
     <link href="http://yoursite.com/2020/10/25/%E5%B7%A5%E7%A7%91%E7%94%9F%E7%9A%84%E7%9E%8E%E6%B6%82%E7%B3%BB%E5%88%970x01/"/>
     <id>http://yoursite.com/2020/10/25/%E5%B7%A5%E7%A7%91%E7%94%9F%E7%9A%84%E7%9E%8E%E6%B6%82%E7%B3%BB%E5%88%970x01/</id>
-    <published>2020-10-25T07:21:38.000Z</published>
-    <updated>2020-10-24T06:21:38.000Z</updated>
+    <published>2020-10-25T00:21:38.000Z</published>
+    <updated>2020-10-24T00:21:38.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;好看是第一生产力~😋&lt;/p&gt;
@@ -320,8 +337,8 @@
     <title>Categories readme</title>
     <link href="http://yoursite.com/2020/10/25/Categoriesreadme/"/>
     <id>http://yoursite.com/2020/10/25/Categoriesreadme/</id>
-    <published>2020-10-25T07:10:24.000Z</published>
-    <updated>2020-10-05T06:10:24.000Z</updated>
+    <published>2020-10-25T00:10:24.000Z</published>
+    <updated>2020-10-05T00:10:24.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;readme.txt</summary>
@@ -339,8 +356,8 @@
     <title>Win10下的Vagrant+Virtualbox搭建Linux</title>
     <link href="http://yoursite.com/2020/10/25/UsingvagrantVirtualBox/"/>
     <id>http://yoursite.com/2020/10/25/UsingvagrantVirtualBox/</id>
-    <published>2020-10-24T22:12:01.000Z</published>
-    <updated>2020-10-24T22:12:01.000Z</updated>
+    <published>2020-10-24T16:12:01.000Z</published>
+    <updated>2020-10-24T16:12:01.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;看看我的WSL出大问题，另辟蹊径了害，，真香😋~</summary>
@@ -354,10 +371,10 @@
   
   <entry>
     <title>WSL折腾失败记录</title>
-    <link href="http://yoursite.com/2020/10/25/WSLfail/"/>
-    <id>http://yoursite.com/2020/10/25/WSLfail/</id>
-    <published>2020-10-24T21:35:06.000Z</published>
-    <updated>2020-10-24T21:35:06.000Z</updated>
+    <link href="http://yoursite.com/2020/10/24/WSLfail/"/>
+    <id>http://yoursite.com/2020/10/24/WSLfail/</id>
+    <published>2020-10-24T15:35:06.000Z</published>
+    <updated>2020-10-24T15:35:06.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;error: 0x80073701&lt;/strong&gt;&lt;br&gt;这个error搞了我大半天了惹，用尽各种方法，最终放弃了，毕竟是要重装系统的事情…他喵的vegrant他不香吗，VirtualBox不香吗，偏偏要Windows自带的人傻了（但是WSL可以用hyper，好看是第一生产力😭）罢了记录一下，要搞很快的其实，哪天突然windows抽回来我再弄也行~</summary>
@@ -365,25 +382,6 @@
     
     
     <category term="operating record" scheme="http://yoursite.com/categories/operating-record/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hyperecord</title>
-    <link href="http://yoursite.com/2020/10/25/Hyperecord/"/>
-    <id>http://yoursite.com/2020/10/25/Hyperecord/</id>
-    <published>2020-10-24T21:29:42.000Z</published>
-    <updated>2020-10-24T21:29:42.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt; .hyper.js</summary>
-    
-    
-    
-    <category term="Local logging" scheme="http://yoursite.com/categories/Local-logging/"/>
-    
-    <category term="Config" scheme="http://yoursite.com/categories/Local-logging/Config/"/>
     
     
   </entry>
